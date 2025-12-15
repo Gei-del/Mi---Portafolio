@@ -408,6 +408,34 @@ body {
   color: var(--accent);
 }
 
+/* ====== VIDEO AL LADO DERECHO ====== */
+
+/* Card derecha (misma altura que Info directa) */
+.video-side {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Wrapper del video */
+.video-wrapper {
+  flex: 1;                 /* 🔴 antes estaba en 2, esto causaba desbalance */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* mantiene proporción sin deformar */
+  border-radius: 14px;
+  background-color: #000;
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.25);
+}
+
+
 /* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--border-soft);
