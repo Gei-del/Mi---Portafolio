@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lorena | Web Developer</title>
+
+  <!-- Bootstrap aqui va -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- mi CSS -->
+  <link rel="stylesheet" href="/CSS/portafolio.css" />
+
+  <!-- Open Graph(lo que ve mi reclutador) -->
+  <meta property="og:title" content="Lorena | Portafolio" />
+  <meta property="og:description" content="Portafolio de desarrollo web - proyectos, experiencia y contacto." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+
+  <!-- ====== BACKGROUND - estructura ====== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+      <a class="navbar-brand fw-semibold brand" href="#home">
+        <span class="brand-dot"></span>
+        <span><img src="/IMG/logo portafolio.png" alt=""></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home" data-nav>Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-nav>Acerca de mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-nav>Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume" data-nav>Resumen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-nav>Contacto</a></li>
+
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-sm btn-outline-primary btn-nav" href="#contact">
+              <i class="bi bi-chat-dots me-1"></i> Hablemos
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main>
+
+    <!-- ====== HERO ====== -->
+    <section id="home" class="section hero-section">
+      <div class="container py-5">
+        <div class="row align-items-center g-5">
+          
+          <!-- Left: Text -->
+          <div class="col-12 col-lg-6 hero-left">
+            <div class="badge-available mb-3" data-animate="fade-up">
+              <i class="bi bi-lightning-charge-fill me-2"></i>
+              Disponible para proyectos
+            </div>
+
+            <h1 class="hero-title" data-animate="fade-up">
+              Hola, soy <span class="accent">Lorena Ponton</span>
+            </h1>
+
+            <h2 class="hero-subtitle" data-animate="fade-up">
+              <span class="muted"> Desarrolladora Full stack</span> · <span class="typing" id="typing"></span>
+            </h2>
+
+            <p class="hero-description mt-3" data-animate="fade-up">
+              🎸💻 <strong>  Frontend con ritmo,</strong> backend con lógica. <strong> Desarrollo con propósito.</strong>💻🎸
+            </p>
+
+            <div class="hero-actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
+              <!-- CV: reemplaza el href por tu archivo real -->
+              <a class="btn btn-primary" href="/hoja de vida/Hoja de vida Geidy Lorena Ponton Campo (2) (1).pdf" download>
+                <i class="bi bi-download me-2"></i> Download CV
+              </a>
+
+              <a class="btn btn-outline-light" href="#contact">
+                <i class="bi bi-send me-2"></i> Contact
+              </a>
+
+              <a class="btn btn-ghost" href="#projects">
+                <i class="bi bi-grid-3x3-gap me-2"></i> Ver proyectos
+              </a>
+            </div>
+
+            <div class="social-row mt-4" data-animate="fade-up">
+              <span class="muted small me-2">Follow me:</span>
+              <a class="social-link" href="https://github.com/Gei-del?tab=repositories" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <i class="bi bi-github"></i>
+              </a>
+              <a class="social-link" href="https://www.linkedin.com/in/geidyponton-desarrolladora-fron-end/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a class="social-link" href="mailto:pontongeidy@gmail.com" aria-label="Email">
+                <i class="bi bi-envelope"></i>
+              </a>
+              <a class="social-link" href="https://www.instagram.com/gl25pc?igsh=MTdsemQyanlrZzNibw==" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </div>
+
+            <!-- Marca tipo watermark (como tu referencia) -->
+            <div class="watermark mt-4" aria-hidden="true">
+              <span class="watermark-text">© GC_codes
+</span>
+            </div>
+          </div>
+
+          <!-- Right: Photo -->
+          <div class="col-12 col-lg-6 hero-right">
+            <div class="hero-card" data-animate="zoom-in">
+              <div class="profile-ring">
+                <!-- FOTO PROFESIONAL: cambia el src por tu foto -->
+                <img class="profile-photo" src="/IMG/WhatsApp Image 2025-12-13 at 9.37.36 PM.jpeg" alt="Foto profesional de Geidy" />
+              </div>
+
+              <div class="hero-mini-cards mt-4">
+                <div class="mini-card" data-tilt>
+                  <i class="bi bi-code-slash"></i>
+                  <div>
+                    <p class="mini-title">Frontend</p>
+                    <p class="mini-sub"></p>
+                  </div>
+                </div>
+
+                <div class="mini-card" data-tilt>
+                  <i class="bi bi-braces"></i>
+                  <div>
+                    <p class="mini-title">Backend</p>
+                    <p class="mini-sub"></p>
+                  </div>
+                </div>
+
+                <div class="mini-card" data-tilt>
+                  <i class="bi bi-git"></i>
+                  <div>
+                    <p class="mini-title">Git/GitHub</p>
+                    <p class="mini-sub"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== Acerca de mí ====== -->
+    <section id="about" class="section about-section">
+      <div class="container py-5">
+        <div class="section-head">
+          <p class="kicker" data-animate="fade-up">Sobre mí</p>
+          <h2 class="section-title" data-animate="fade-up">Interfaces simples por fuera, sólidas por dentro.</h2>
+          <p class="section-subtitle" data-animate="fade-up">
+          Soy desarrolladora frontend y analista de sistemas, enfocada en crear interfaces modernas, funcionales y bien estructuradas. Combino HTML, CSS, JavaScript y Bootstrap con una base sólida en Programación Orientada a Objetos en Java y bases de datos, lo que me permite comprender la lógica detrás de cada solución. Valoro el código limpio, el trabajo en equipo y la comunicación efectiva, aplicando empatía, disciplina y atención al detalle en cada proyecto.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-lg-7">
+            <div class="card-surface p-4" data-animate="fade-up">
+              <h3 class="card-title">Mi enfoque</h3>
+              <p class="muted">
+                Desarrollo soluciones digitales pensando en las personas que las usan y en el equipo que las mantiene. Combino frontend moderno con lógica bien estructurada en Java, buscando siempre claridad, orden y comunicación entre las partes del sistema.
+              </p>
+
+              <div class="skills mt-4">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Bootstrap</span>
+                <span class="skill">Git/GitHub</span>
+                <span class="skill">Java (POO)</span>
+                <span class="skill">LocalStorage</span>
+                <span class="skill">Validaciones</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <div class="card-surface p-4 h-100" data-animate="fade-up">
+              <h3 class="card-title">Destacados</h3>
+
+              <ul class="clean-list mt-3">
+                <li><i class="bi bi-check2-circle me-2"></i>Proyectos web, responsive y componentes</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Validaciones robustas (formularios / lógica)</li>
+                <li><i class="bi bi-check2-circle me-2"></i>CRUD con LocalStorage</li>
+                <li><i class="bi bi-check2-circle me-2"></i>POO en Java: clases, interfaces, excepciones</li>
+              </ul>
+
+              <div class="mt-4 d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-primary" href="#projects">
+                  <i class="bi bi-folder2-open me-2"></i> Ver proyectos
+                </a>
+                <a class="btn btn-outline-light" href="#contact">
+                  <i class="bi bi-envelope-paper me-2"></i> Contacto
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== PROJECTS ====== -->
+    <section id="projects" class="section projects-section">
+      <div class="container py-5">
+        <div class="section-head">
+          <p class="kicker" data-animate="fade-up">Portafolio</p>
+          <h2 class="section-title" data-animate="fade-up">Proyectos Trabajados</h2>
+          <p class="section-subtitle" data-animate="fade-up">
+            Selección de proyectos (Web + Java)
+          </p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters mt-4" data-animate="fade-up">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="java">Java</button>
+          <button class="filter-btn" data-filter="js">JavaScript</button>
+          <button class="filter-btn" data-filter="academic">Académico</button>
+        </div>
+
+        <!-- Portafolio Landing -->
+
+        <div class="row g-4 mt-1" id="projectsGrid">
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web js">
+            <article class="project-card" data-animate="fade-up">
+              <div class="project-thumb">
+                <img src="./assets/projects/proyecto-1.jpg" alt="Vista previa del proyecto Portafolio Landing" />
+                <span class="project-chip">Web</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Portafolio Landing</h3>
+                <p class="project-desc">Landing responsive con secciones, animaciones y estética dark + blue.</p>
+                <div class="project-tags">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <div class="project-actions">
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                  data-title="Portafolio Landing"
+                  data-desc="Landing page responsive con animaciones suaves y navegación sticky."
+                  data-tech="HTML, CSS, JavaScript, Bootstrap"
+                  data-github="https://github.com/"
+                  data-demo="#">
+                  <i class="bi bi-eye me-1"></i> Ver
+                </button>
+                <a class="btn btn-sm btn-outline-light" href="https://github.com/" target="_blank" rel="noreferrer">
+                  <i class="bi bi-github me-1"></i> GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- CRUD LocalStorage -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web academic">
+            <article class="project-card" data-animate="fade-up">
+              <div class="project-thumb">
+                <img src="./assets/projects/proyecto-2.jpg" alt="Vista previa del proyecto CRUD LocalStorage" />
+                <span class="project-chip">CRUD</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">CRUD con LocalStorage</h3>
+                <p class="project-desc">Panel de administración con validaciones y persistencia.</p>
+                <div class="project-tags">
+                  <span>JS</span><span>LocalStorage</span><span>Bootstrap</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-light" href="https://github.com/" target="_blank">
+                    <i class="bi bi-github me-1"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+           <!-- Sistema de Reservas -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="java academic">
+            <article class="project-card" data-animate="fade-up">
+              <div class="project-body">
+                <span class="project-chip">Java</span>
+                <h3 class="project-title">Sistema de Reservas</h3>
+                <p class="project-desc">Java · POO · Estructuras · Validaciones</p>
+                <ul class="project-tags">
+                  <li>Clases: Reserva, Cliente, Sala</li>
+                  <li>Colecciones</li>
+                  <li>Validaciones</li>
+                  <li>Excepciones</li>
+                </ul>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-light" href="https://github.com/" target="_blank">
+                    <i class="bi bi-github me-1"></i> GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- E-commerce Deportivo -->
+            <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web js">
+              <article class="project-card" data-animate="fade-up">
+                <div class="project-body">
+                  <span class="project-chip">Web</span>
+                  <h3 class="project-title">E-commerce Deportivo</h3>
+                  <p class="project-desc">HTML · CSS · JavaScript · LocalStorage</p>
+                  <ul class="project-tags">
+                    <li>CRUD frontend</li>
+                    <li>Persistencia en LocalStorage</li>
+                    <li>Render dinámico</li>
+                  </ul>
+                  <div class="project-actions">
+                    <a class="btn btn-sm btn-outline-light" href="https://github.com/" target="_blank">
+                      <i class="bi bi-github me-1"></i> GitHub</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- Portafolio Inteligente -->
+              <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web js">
+                <article class="project-card" data-animate="fade-up">
+                  <div class="project-body">
+                    <span class="project-chip">Frontend</span>
+                    <h3 class="project-title">Portafolio Inteligente</h3>
+                    <p class="project-desc">HTML · CSS · JavaScript · GSAP</p>
+                    <ul class="project-tags">
+                      <li>Filtros por categoría</li>
+                      <li>Modales</li>
+                      <li>Animaciones GSAP</li>
+                    </ul>
+                    <div class="project-actions">
+                      <a class="btn btn-sm btn-outline-light" href="https://github.com/" target="_blank">
+                        <i class="bi bi-github me-1"></i> GitHub</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <!-- Proyecto Vertox - Hackathon -->
+                <div class="col-12 col-md-6 col-lg-4 project-item" data-category="academic">
+                  <article class="project-card" data-animate="fade-up">
+                    <div class="project-body">
+                      <span class="project-chip">UX/UI</span>
+                      <h3 class="project-title">Diseño UX/UI Científico</h3>
+                      <p class="project-desc"> UX · UI · Prototipado</p>
+                      <ul class="project-tags">
+                        <li>Jerarquía visual</li>
+                        <li>Sistema de componentes</li>
+                        <li>Accesibilidad</li>
+                      </ul>
+                      <div class="project-actions">
+                        <span class="muted small">Proyecto conceptual</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+    <!-- ====== RESUME / TIMELINE ====== -->
+    <section id="resume" class="section resume-section">
+      <div class="container py-5">
+        <div class="section-head">
+          <p class="kicker" data-animate="fade-up">Resumen</p>
+          <h2 class="section-title" data-animate="fade-up">Formación & experiencia</h2>
+          <p class="section-subtitle" data-animate="fade-up">
+            Camino de aprendizaje y proyectos aplicados.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-lg-6">
+            <div class="card-surface p-4" data-animate="fade-up">
+              <h3 class="card-title"><i class="bi bi-mortarboard me-2"></i>Educación</h3>
+
+              <div class="timeline mt-3">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">Desarrolladora Full Stack Java - Generation Colombia</p>
+                    <p class="t-meta muted">En progreso</p>
+                    <p class="t-desc muted">Fundamentos, Java, Bases de datos y proyectos web.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">Análisis y desarrollo de sistema de información - Centro de servicio SENA</p>
+                    <p class="t-meta muted">Culminado</p>
+                    <p class="t-desc muted">Analizar los requisitos del cliente, Aplicar buenas prácticas de calidad, Diseñar y desarrollar sistemas, Participar en procesos de negociación tecnológica.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card-surface p-4" data-animate="fade-up">
+              <h3 class="card-title"><i class="bi bi-briefcase me-2"></i>Experiencia</h3>
+
+              <div class="timeline mt-3">
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">Frontend Projects</p>
+                    <p class="t-meta muted">2025</p>
+                    <p class="t-desc muted">Landing pages, formularios, validaciones y componentes UI.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">Java OOP Modules</p>
+                    <p class="t-meta muted">2025</p>
+                    <p class="t-desc muted">Modelado de sistemas: reservas, pagos, lógica y excepciones.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a class="btn btn-outline-primary" href="/hoja de vida/Hoja de vida Geidy Lorena Ponton Campo (2) (1).pdf" download>
+                  <i class="bi bi-file-earmark-arrow-down me-2"></i> Descargar CV
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== CONTACT ====== -->
+    <section id="contact" class="section contact-section">
+      <div class="container py-5">
+        <div class="section-head">
+          <p class="kicker" data-animate="fade-up">Contacto</p>
+          <h2 class="section-title" data-animate="fade-up">Trabajemos juntos</h2>
+          <p class="section-subtitle" data-animate="fade-up">
+            Envíame un mensaje y te respondo lo antes posible.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-lg-5">
+            <div class="card-surface p-4 h-100" data-animate="fade-up">
+              <h3 class="card-title">Info directa</h3>
+
+              <div class="contact-list mt-3">
+                <a class="contact-item" href="mailto:tuemail@correo.com">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <p class="c-title">Email</p>
+                    <p class="c-sub muted">pontongeidy@gmail.com</p>
+                  </div>
+                </a>
+
+                <a class="contact-item" href="https://github.com/Gei-del" target="_blank" rel="noreferrer">
+                  <i class="bi bi-github"></i>
+                  <div>
+                    <p class="c-title">GitHub</p>
+                    <p class="c-sub muted">Gei-del</p>
+                  </div>
+                </a>
+
+                <a class="contact-item" href="https://www.linkedin.com/in/geidyponton-desarrolladora-fron-end/" target="_blank" rel="noreferrer">
+                  <i class="bi bi-linkedin"></i>
+                  <div>
+                    <p class="c-title">LinkedIn</p>
+                    <p class="c-sub muted">geidyponton-desarrolladora-fron-end/</p>
+                  </div>
+                </a>
+
+                <a class="contact-item" href="https://wa.me/573174070511" target="_blank" rel="noreferrer">
+                  <i class="bi bi-whatsapp"></i>
+                  <div>
+                    <p class="c-title">WhatsApp</p>
+                    <p class="c-sub muted">+57 3174070511</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mt-4 muted small">
+                También puedes escribirme por redes. Mantengo mis proyectos actualizados en GitHub.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <video src="/"></video>
+          </div>
+
+          <!--<div class="col-12 col-lg-7">
+            <div class="card-surface p-4" data-animate="fade-up">
+              <h3 class="card-title">Formulario</h3>
+
+              <form id="contactForm" class="mt-3" novalidate>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" class="form-control" placeholder="Tu nombre" required>
+                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="tucorreo@email.com" required>
+                    <div class="invalid-feedback">Por favor ingresa un email válido.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" class="form-control" rows="5" placeholder="Cuéntame sobre tu idea..." required></textarea>
+                    <div class="invalid-feedback">Escribe un mensaje (mínimo 10 caracteres).</div>
+                  </div>
+
+                  <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="bi bi-send me-2"></i> Enviar
+                    </button>
+                    <p id="formStatus" class="m-0 small muted" role="status" aria-live="polite"></p>
+                  </div>
+                </div>
+              </form>
+
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <p class="m-0 muted small">
+        © <span id="year"></span> Geidy Ponton. 
+        El viaje continúa, aunque el camino sea estrecho.
+      </p>
+
+      <div class="footer-links d-flex gap-3">
+        <a href="#Home" class="muted small">Inicio</a>
+        <a href="#Projects" class="muted small">Proyectos</a>
+        <a href="#Contact" class="muted small">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ====== PROJECT MODAL ====== -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-dark">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalTitle">Proyecto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+          <p class="muted" id="modalDesc"></p>
+
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge text-bg-dark border" id="modalTech">Tech</span>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a class="btn btn-outline-light" id="modalGithub" href="#" target="_blank" rel="noreferrer">
+              <i class="bi bi-github me-2"></i> GitHub
+            </a>
+
+            <a class="btn btn-primary" id="modalDemo" href="#" target="_blank" rel="noreferrer">
+              <i class="bi bi-box-arrow-up-right me-2"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====== SCRIPTS ====== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP (Paso 2) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Tu JS -->
+  <script src="/JS/portafolio.js"></script>
+
+</body>
+</html>
