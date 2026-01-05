@@ -60,7 +60,7 @@ function setupSmoothScrollAndActiveNav() {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        const id = #${entry.target.id};
+        const id = `#${entry.target.id}`;
         navLinks.forEach((a) => {
           const isActive = a.getAttribute("href") === id;
           a.classList.toggle("active", isActive);
@@ -320,11 +320,13 @@ function setupTiltCards() {
       const rotY = ((x - midX) / midX) * maxTilt;
       const rotX = -((y - midY) / midY) * maxTilt;
 
-      el.style.transform = perspective(${perspective}px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale});
+      el.style.transform = `perspective(${perspective}px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`;
+
     });
 
     el.addEventListener("mouseleave", () => {
-      el.style.transform = perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale(1);
+      el.style.transform = `perspective(${perspective}px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`;
+
     });
   });
 }
