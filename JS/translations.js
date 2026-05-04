@@ -34,7 +34,8 @@ const translations = {
     // About
     about_kicker: "Sobre mí",
     about_title: "De la teoría a la práctica: proyectos que resuelven problemas reales",
-    about_subtitle: "Tecnóloga en Análisis y Desarrollo de Sistemas, estudiante de Ingeniería y formada en desarrollo Full Stack Java. Mi experiencia viene de hackathons y proyectos académicos donde aplico lo aprendido en soluciones funcionales.",
+    about_subtitle_highlight: "Tecnóloga en Análisis y Desarrollo de Sistemas",
+    about_subtitle_2: "Mi experiencia viene de hackathons y proyectos académicos donde aplico lo aprendido en soluciones funcionales.",
     about_focus_title: "Mi enfoque",
     about_focus_p1: "Aprendo haciendo. Cada proyecto académico y hackathon ha sido una oportunidad para ir más allá de la teoría: en DenunciaIA desarrollé funcionalidades de IA para un problema social real; en Byte Cream construí un sistema completo con arquitectura MVC y conexión a base de datos.",
     about_focus_p2: "Mi formación combina desarrollo multimedia (UX/UI + frontend) con backend en Java y bases de datos. Trabajo con metodologías ágiles, Git para control de versiones, y me adapto rápido a nuevas tecnologías. Busco un equipo donde pueda seguir aprendiendo mientras aporto desde el día uno.",
@@ -127,7 +128,8 @@ const translations = {
     // About
     about_kicker: "About me",
     about_title: "From theory to practice: projects that solve real problems",
-    about_subtitle: "Systems Analysis and Development Technologist, Engineering student, and trained in Full Stack Java development. My experience comes from hackathons and academic projects where I apply what I learn in functional solutions.",
+    about_subtitle_highlight: "Systems Analysis and Development Technologist",
+    about_subtitle_2: "My experience comes from hackathons and academic projects where I apply what I learn in functional solutions.",
     about_focus_title: "My approach",
     about_focus_p1: "I learn by doing. Every academic project and hackathon has been an opportunity to go beyond theory: in DenunciaIA I developed AI functionalities for a real social problem; in Byte Cream I built a complete system with MVC architecture and database connection.",
     about_focus_p2: "My training combines multimedia development (UX/UI + frontend) with Java backend and databases. I work with agile methodologies, Git for version control, and I adapt quickly to new technologies. I'm looking for a team where I can keep learning while contributing from day one.",
