@@ -46,16 +46,24 @@
 
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#home" data-nav>Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about" data-nav>Sobre Mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects" data-nav>Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume" data-nav>Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact" data-nav>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#home" data-nav data-i18n="nav_home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-nav data-i18n="nav_about">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-nav data-i18n="nav_projects">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume" data-nav data-i18n="nav_experience">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-nav data-i18n="nav_contact">Contacto</a></li>
 
           <li class="nav-item ms-lg-2">
             <a class="btn btn-sm btn-outline-primary btn-nav" href="#contact">
-              <i class="bi bi-chat-dots me-1"></i> Hablemos
+              <i class="bi bi-chat-dots me-1"></i> <span data-i18n="nav_cta">Hablemos</span>
             </a>
+          </li>
+
+          <!-- Language Toggle -->
+          <li class="nav-item ms-lg-3">
+            <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+              <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+              <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
           </li>
         </ul>
       </div>
@@ -74,18 +82,18 @@
           <div class="col-12 col-lg-6 hero-left">
             <div class="badge-available mb-3" data-animate="fade-up">
               <i class="bi bi-lightning-charge-fill me-2"></i>
-              Disponible para oportunidades
+              <span data-i18n="hero_badge">Disponible para oportunidades</span>
             </div>
 
             <h1 class="hero-title" data-animate="fade-up">
-              Hola, soy <span class="accent">Lorena Pontón</span>
+              <span data-i18n="hero_greeting">Hola, soy</span> <span class="accent">Lorena Pontón</span>
             </h1>
 
             <h2 class="hero-subtitle" data-animate="fade-up">
-              Desarrolladora <span class="accent">Full Stack Java</span> en formación
+              <span data-i18n="hero_role">Desarrolladora</span> <span class="accent" data-i18n="hero_role_highlight">Full Stack Java</span> <span data-i18n="hero_role_suffix">en formación</span>
             </h2>
 
-            <p class="hero-description mt-3" data-animate="fade-up">
+            <p class="hero-description mt-3" data-animate="fade-up" data-i18n="hero_desc">
               Construyo soluciones reales desde proyectos académicos y hackathons. 
               Combino backend en Java con frontend moderno y fundamentos de UX para crear 
               aplicaciones completas con impacto real.
@@ -93,20 +101,20 @@
 
             <div class="hero-actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
               <a class="btn btn-primary" href="/hoja de vida/Hoja de vida Geidy ponton. (act) (1).pdf" download>
-                <i class="bi bi-download me-2"></i> Descargar CV
+                <i class="bi bi-download me-2"></i> <span data-i18n="hero_cv">Descargar CV</span>
               </a>
 
               <a class="btn btn-outline-light" href="#projects">
-                <i class="bi bi-grid-3x3-gap me-2"></i> Ver Proyectos
+                <i class="bi bi-grid-3x3-gap me-2"></i> <span data-i18n="hero_projects">Ver Proyectos</span>
               </a>
 
               <a class="btn btn-ghost" href="#contact">
-                <i class="bi bi-send me-2"></i> Contacto
+                <i class="bi bi-send me-2"></i> <span data-i18n="hero_contact">Contacto</span>
               </a>
             </div>
 
             <div class="social-row mt-4" data-animate="fade-up">
-              <span class="muted small me-2">Encuéntrame en:</span>
+              <span class="muted small me-2" data-i18n="hero_find">Encuéntrame en:</span>
               <a class="social-link" href="https://github.com/Gei-del?tab=repositories" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <i class="bi bi-github"></i>
               </a>
@@ -134,24 +142,24 @@
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-code-slash"></i>
                   <div>
-                    <p class="mini-title">Frontend</p>
-                    <p class="mini-sub">HTML · CSS · JS</p>
+                    <p class="mini-title" data-i18n="hero_frontend">Frontend</p>
+                    <p class="mini-sub" data-i18n="hero_frontend_sub">HTML · CSS · JS</p>
                   </div>
                 </div>
 
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-server"></i>
                   <div>
-                    <p class="mini-title">Backend</p>
-                    <p class="mini-sub"> Java </p>
+                    <p class="mini-title" data-i18n="hero_backend">Backend</p>
+                    <p class="mini-sub" data-i18n="hero_backend_sub">Java</p>
                   </div>
                 </div>
 
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-database"></i>
                   <div>
-                    <p class="mini-title">Datos</p>
-                    <p class="mini-sub"> MySQL</p>
+                    <p class="mini-title" data-i18n="hero_data">Datos</p>
+                    <p class="mini-sub" data-i18n="hero_data_sub">MySQL</p>
                   </div>
                 </div>
               </div>
@@ -166,9 +174,9 @@
     <section id="about" class="section about-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Sobre mí</p>
-          <h2 class="section-title" data-animate="fade-up">De la teoría a la práctica: proyectos que resuelven problemas reales</h2>
-          <p class="section-subtitle" data-animate="fade-up">
+          <p class="kicker" data-animate="fade-up" data-i18n="about_kicker">Sobre mí</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="about_title">De la teoría a la práctica: proyectos que resuelven problemas reales</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="about_subtitle">
             Tecnóloga en Análisis y Desarrollo de Sistemas, estudiante de Ingeniería y formada en desarrollo Full Stack Java. 
             Mi experiencia viene de hackathons y proyectos académicos donde aplico lo aprendido en soluciones funcionales.
           </p>
@@ -177,13 +185,13 @@
         <div class="row g-4 mt-2">
           <div class="col-12 col-lg-7">
             <div class="card-surface p-4" data-animate="fade-up">
-              <h3 class="card-title">Mi enfoque</h3>
-              <p class="muted">
+              <h3 class="card-title" data-i18n="about_focus_title">Mi enfoque</h3>
+              <p class="muted" data-i18n="about_focus_p1">
                 Aprendo haciendo. Cada proyecto académico y hackathon ha sido una oportunidad para ir más allá de la teoría: 
                 en DenunciaIA desarrollé funcionalidades de IA para un problema social real; en Byte Cream construí un sistema 
                 completo con arquitectura MVC y conexión a base de datos.
               </p>
-              <p class="muted">
+              <p class="muted" data-i18n="about_focus_p2">
                 Mi formación combina desarrollo multimedia (UX/UI + frontend) con backend en Java y bases de datos. 
                 Trabajo con metodologías ágiles, Git para control de versiones, y me adapto rápido a nuevas tecnologías. 
                 Busco un equipo donde pueda seguir aprendiendo mientras aporto desde el día uno.
@@ -191,7 +199,7 @@
 
               <div class="skills-organized mt-4">
                 <div class="skill-group mb-3">
-                  <p class="small muted mb-2"><strong>Backend:</strong></p>
+                  <p class="small muted mb-2"><strong data-i18n="about_backend">Backend:</strong></p>
                   <div class="skills">
                     <span class="skill">Java</span>
                     <span class="skill">POO</span>
@@ -200,7 +208,7 @@
                   </div>
                 </div>
                 <div class="skill-group mb-3">
-                  <p class="small muted mb-2"><strong>Frontend:</strong></p>
+                  <p class="small muted mb-2"><strong data-i18n="about_frontend">Frontend:</strong></p>
                   <div class="skills">
                     <span class="skill">HTML5</span>
                     <span class="skill">CSS3</span>
@@ -209,7 +217,7 @@
                   </div>
                 </div>
                 <div class="skill-group">
-                  <p class="small muted mb-2"><strong>Herramientas:</strong></p>
+                  <p class="small muted mb-2"><strong data-i18n="about_tools">Herramientas:</strong></p>
                   <div class="skills">
                     <span class="skill">Git/GitHub</span>
                     <span class="skill">Vercel</span>
@@ -222,22 +230,22 @@
 
           <div class="col-12 col-lg-5">
             <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">Lo que aporto</h3>
+              <h3 class="card-title" data-i18n="about_contribute_title">Lo que aporto</h3>
 
               <ul class="clean-list mt-3">
-                <li><i class="bi bi-check2-circle me-2"></i>Proyectos funcionales end-to-end (no solo teoría)</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Experiencia real en hackathons con equipos bajo presión</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Aprendizaje rápido y adaptabilidad a nuevas tecnologías</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Pensamiento orientado a resolver problemas del usuario</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Comunicación clara y trabajo colaborativo</li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_1">Proyectos funcionales end-to-end (no solo teoría)</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_2">Experiencia real en hackathons con equipos bajo presión</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_3">Aprendizaje rápido y adaptabilidad a nuevas tecnologías</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_4">Pensamiento orientado a resolver problemas del usuario</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_5">Comunicación clara y trabajo colaborativo</span></li>
               </ul>
 
               <div class="mt-4 d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary" href="#projects">
-                  <i class="bi bi-folder2-open me-2"></i> Ver Proyectos
+                  <i class="bi bi-folder2-open me-2"></i> <span data-i18n="about_see_projects">Ver Proyectos</span>
                 </a>
                 <a class="btn btn-outline-light" href="#contact">
-                  <i class="bi bi-envelope-paper me-2"></i> Contacto
+                  <i class="bi bi-envelope-paper me-2"></i> <span data-i18n="about_contact">Contacto</span>
                 </a>
               </div>
             </div>
@@ -251,20 +259,20 @@
     <section id="projects" class="section projects-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Portafolio</p>
-          <h2 class="section-title" data-animate="fade-up">Proyectos Destacados</h2>
-          <p class="section-subtitle" data-animate="fade-up">
+          <p class="kicker" data-animate="fade-up" data-i18n="projects_kicker">Portafolio</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="projects_title">Proyectos Destacados</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="projects_subtitle">
             Proyectos reales de hackathons y formación académica. Cada uno representa un problema resuelto, no solo código escrito.
           </p>
         </div>
 
         <!-- Filters -->
         <div class="filters mt-4" data-animate="fade-up">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="hackathon">Hackathons</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="web">Frontend</button>
-          <button class="filter-btn" data-filter="java">Backend</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+          <button class="filter-btn" data-filter="hackathon" data-i18n="filter_hackathons">Hackathons</button>
+          <button class="filter-btn" data-filter="fullstack" data-i18n="filter_fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="web" data-i18n="filter_frontend">Frontend</button>
+          <button class="filter-btn" data-filter="java" data-i18n="filter_backend">Backend</button>
         </div>
 
         <div class="row g-4 mt-1" id="projectsGrid">
@@ -473,9 +481,9 @@
     <section id="resume" class="section resume-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Trayectoria</p>
-          <h2 class="section-title" data-animate="fade-up">Formación sólida + experiencia práctica en proyectos reales</h2>
-          <p class="section-subtitle" data-animate="fade-up">
+          <p class="kicker" data-animate="fade-up" data-i18n="exp_kicker">Trayectoria</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="exp_title">Formación sólida + experiencia práctica en proyectos reales</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="exp_subtitle">
             Sin experiencia laboral formal aún, pero con formación técnica completa y múltiples proyectos 
             desarrollados en hackathons y entornos académicos colaborativos.
           </p>
@@ -608,9 +616,9 @@
       <div class="container py-5">
 
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Contacto</p>
-          <h2 class="section-title" data-animate="fade-up">Busco mi primera oportunidad como desarrolladora</h2>
-          <p class="section-subtitle" data-animate="fade-up">
+          <p class="kicker" data-animate="fade-up" data-i18n="contact_kicker">Contacto</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="contact_title">Busco mi primera oportunidad como desarrolladora</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="contact_subtitle">
             Disponible para prácticas, primer empleo o proyectos donde pueda aprender y aportar desde el día uno.
             Si buscas talento junior con ganas de crecer, hablemos.
           </p>
@@ -621,7 +629,7 @@
           <!-- Left: Contact Info -->
           <div class="col-12 col-lg-5">
             <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">Información de Contacto</h3>
+              <h3 class="card-title" data-i18n="contact_info_title">Información de Contacto</h3>
 
               <div class="contact-list mt-3">
                 <a class="contact-item" href="mailto:pontongeidy@gmail.com">
@@ -658,8 +666,8 @@
               </div>
 
               <div class="availability-badge mt-4 p-3" style="background: rgba(76, 201, 240, 0.1); border-radius: var(--radius-sm); border: 1px solid rgba(76, 201, 240, 0.3);">
-                <p class="small mb-1" style="color: var(--accent);"><strong>🟢 Disponibilidad inmediata</strong></p>
-                <p class="muted small mb-0">
+                <p class="small mb-1" style="color: var(--accent);"><strong><span class="availability-dot">●</span> <span data-i18n="contact_availability">Disponibilidad inmediata</span></strong></p>
+                <p class="muted small mb-0" data-i18n="contact_availability_desc">
                   Tiempo completo o medio tiempo. Modalidad remota, híbrida o presencial en Colombia.
                 </p>
               </div>
@@ -690,13 +698,13 @@
   <footer class="site-footer">
     <div class="container py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
       <p class="m-0 muted small">
-        © <span id="year"></span> Lorena Pontón · Desarrolladora Full Stack Junior
+        © <span id="year"></span> Lorena Pontón · <span data-i18n="footer_made">Diseñado y desarrollado por</span> LP_DEV
       </p>
 
       <div class="footer-links d-flex gap-3">
-        <a href="#home" class="muted small">Inicio</a>
-        <a href="#projects" class="muted small">Proyectos</a>
-        <a href="#contact" class="muted small">Contacto</a>
+        <a href="#home" class="muted small" data-i18n="nav_home">Inicio</a>
+        <a href="#projects" class="muted small" data-i18n="nav_projects">Proyectos</a>
+        <a href="#contact" class="muted small" data-i18n="nav_contact">Contacto</a>
       </div>
     </div>
   </footer>
@@ -732,6 +740,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="/JS/translations.js"></script>
   <script src="/JS/portafolio.js"></script>
 
 </body>
