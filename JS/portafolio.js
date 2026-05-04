@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTiltCards();
   setupGSAPAnimations();
   setupScrollToTop();
+  setupLanguageToggle();
 });
 
 /* ---------- Footer Year ---------- */
@@ -358,6 +359,83 @@ document.addEventListener("DOMContentLoaded", () => {
     $$("img[data-src]").forEach((img) => imageObserver.observe(img));
   }
 });
+
+/* ---------- Language Toggle System ---------- */
+function setupLanguageToggle() {
+  const langButtons = $$(".lang-btn");
+  if (!langButtons.length || typeof translations === 'undefined') return;
+
+  // Get saved language or detect from browser
+  let currentLang = localStorage.getItem('portfolio-lang') || 
+                    (navigator.language.startsWith('en') ? 'en' : 'es');
+  
+  // Apply initial language
+  applyLanguage(currentLang);
+  updateLangButtons(currentLang);
+
+  // Setup button listeners
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
+      if (lang === currentLang) return;
+
+      currentLang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+      applyLanguage(lang);
+      updateLangButtons(lang);
+
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+    });
+  });
+
+  function updateLangButtons(lang) {
+    langButtons.forEach((btn) => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive.toString());
+    });
+  }
+
+  function applyLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    // Update all elements with data-i18n attribute
+    $$("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (t[key]) {
+        el.textContent = t[key];
+      }
+    });
+
+    // Update page title and meta based on language
+    if (lang === 'en') {
+      document.title = "Lorena Pontón | Full Stack Java Developer in training";
+      const metaDesc = $('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.content = "Full Stack Java Developer in training. I build real solutions in hackathons and academic projects. Java Backend + Modern Frontend + UX. Looking for my first professional opportunity.";
+      }
+    } else {
+      document.title = "Lorena Pontón | Desarrolladora Full Stack Java en formación";
+      const metaDesc = $('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.content = "Desarrolladora Full Stack Java en formación. Construyo soluciones reales en hackathons y proyectos académicos. Backend Java + Frontend moderno + UX. Busco mi primera oportunidad profesional.";
+      }
+    }
+
+    // Update accessibility elements
+    const skipLink = $(".skip-link");
+    if (skipLink && t.skip_link) {
+      skipLink.textContent = t.skip_link;
+    }
+
+    const menuToggle = $("#menuToggle");
+    if (menuToggle && t.menu_open) {
+      menuToggle.setAttribute("aria-label", t.menu_open);
+    }
+  }
+}
 
 /* ---------- Console Message for Recruiters ---------- */
 console.log(

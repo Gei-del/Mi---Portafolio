@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lorena Pontón | Full Stack Developer Junior</title>
+  <title>Lorena Pontón | Desarrolladora Full Stack Java en formación</title>
+  <meta name="description" content="Desarrolladora Full Stack Java en formación. Construyo soluciones reales en hackathons y proyectos académicos. Backend Java + Frontend moderno + UX. Busco mi primera oportunidad profesional." />
+  <meta name="keywords" content="desarrolladora junior, full stack java, hackathon, Colombia, primer empleo desarrollador, backend java, frontend javascript" />
+  <meta name="author" content="Lorena Pontón" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,12 +19,29 @@
   <link rel="stylesheet" href="/CSS/portafolio.css" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lorena Pontón | Desarrolladora Full Stack Junior" />
-  <meta property="og:description" content="Desarrolladora Full Stack Junior especializada en crear soluciones web funcionales con Java, JavaScript y bases de datos." />
+  <meta property="og:title" content="Lorena Pontón | Desarrolladora Full Stack Java en formación" />
+  <meta property="og:description" content="Construyo soluciones reales desde hackathons y proyectos académicos. Backend Java + Frontend moderno. Busco mi primera oportunidad profesional." />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lorena Pontón | Full Stack Java Developer" />
+  <meta name="twitter:description" content="Junior Full Stack Developer building real solutions through hackathons and academic projects." />
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="color-scheme" content="dark" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 </head>
 
 <body>
+
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <!-- Background Effects -->
   <div class="bg-grid" aria-hidden="true"></div>
@@ -36,22 +56,30 @@
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú" id="menuToggle">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#home" data-nav>Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about" data-nav>Sobre Mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects" data-nav>Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume" data-nav>Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact" data-nav>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#home" data-nav data-i18n="nav_home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-nav data-i18n="nav_about">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-nav data-i18n="nav_projects">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume" data-nav data-i18n="nav_experience">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-nav data-i18n="nav_contact">Contacto</a></li>
 
           <li class="nav-item ms-lg-2">
             <a class="btn btn-sm btn-outline-primary btn-nav" href="#contact">
-              <i class="bi bi-chat-dots me-1"></i> Hablemos
+              <i class="bi bi-chat-dots me-1"></i> <span data-i18n="nav_cta">Hablemos</span>
             </a>
+          </li>
+
+          <!-- Language Toggle -->
+          <li class="nav-item ms-lg-3">
+            <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+              <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+              <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
           </li>
         </ul>
       </div>
@@ -59,7 +87,7 @@
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION -->
     <section id="home" class="section hero-section">
@@ -70,38 +98,39 @@
           <div class="col-12 col-lg-6 hero-left">
             <div class="badge-available mb-3" data-animate="fade-up">
               <i class="bi bi-lightning-charge-fill me-2"></i>
-              Disponible para oportunidades
+              <span data-i18n="hero_badge">Disponible para oportunidades</span>
             </div>
 
             <h1 class="hero-title" data-animate="fade-up">
-              Hola, soy <span class="accent">Lorena Pontón</span>
+              <span data-i18n="hero_greeting">Hola, soy</span> <span class="accent">Lorena Pontón</span>
             </h1>
 
             <h2 class="hero-subtitle" data-animate="fade-up">
-              Desarrolladora <span class="accent">Full Stack Junior</span>
+              <span data-i18n="hero_role">Desarrolladora</span> <span class="accent" data-i18n="hero_role_highlight">Full Stack Java</span> <span data-i18n="hero_role_suffix">en formación</span>
             </h2>
 
-            <p class="hero-description mt-3" data-animate="fade-up">
-              Creo aplicaciones web funcionales integrando frontend, backend y bases de datos.
-              Busco mi primera oportunidad profesional para aportar, aprender y crecer con un equipo de desarrollo.
+            <p class="hero-description mt-3" data-animate="fade-up" data-i18n="hero_desc">
+              Construyo soluciones reales desde proyectos académicos y hackathons. 
+              Combino backend en Java con frontend moderno y fundamentos de UX para crear 
+              aplicaciones completas con impacto real.
             </p>
 
             <div class="hero-actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
               <a class="btn btn-primary" href="/hoja de vida/Hoja de vida Geidy ponton. (act) (1).pdf" download>
-                <i class="bi bi-download me-2"></i> Descargar CV
+                <i class="bi bi-download me-2"></i> <span data-i18n="hero_cv">Descargar CV</span>
               </a>
 
               <a class="btn btn-outline-light" href="#projects">
-                <i class="bi bi-grid-3x3-gap me-2"></i> Ver Proyectos
+                <i class="bi bi-grid-3x3-gap me-2"></i> <span data-i18n="hero_projects">Ver Proyectos</span>
               </a>
 
               <a class="btn btn-ghost" href="#contact">
-                <i class="bi bi-send me-2"></i> Contacto
+                <i class="bi bi-send me-2"></i> <span data-i18n="hero_contact">Contacto</span>
               </a>
             </div>
 
             <div class="social-row mt-4" data-animate="fade-up">
-              <span class="muted small me-2">Encuéntrame en:</span>
+              <span class="muted small me-2" data-i18n="hero_find">Encuéntrame en:</span>
               <a class="social-link" href="https://github.com/Gei-del?tab=repositories" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <i class="bi bi-github"></i>
               </a>
@@ -129,24 +158,24 @@
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-code-slash"></i>
                   <div>
-                    <p class="mini-title">Frontend</p>
-                    <p class="mini-sub">HTML · CSS · JS</p>
+                    <p class="mini-title" data-i18n="hero_frontend">Frontend</p>
+                    <p class="mini-sub" data-i18n="hero_frontend_sub">HTML · CSS · JS</p>
                   </div>
                 </div>
 
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-server"></i>
                   <div>
-                    <p class="mini-title">Backend</p>
-                    <p class="mini-sub"> Java </p>
+                    <p class="mini-title" data-i18n="hero_backend">Backend</p>
+                    <p class="mini-sub" data-i18n="hero_backend_sub">Java</p>
                   </div>
                 </div>
 
                 <div class="mini-card" data-tilt>
                   <i class="bi bi-database"></i>
                   <div>
-                    <p class="mini-title">Datos</p>
-                    <p class="mini-sub"> MySQL</p>
+                    <p class="mini-title" data-i18n="hero_data">Datos</p>
+                    <p class="mini-sub" data-i18n="hero_data_sub">MySQL</p>
                   </div>
                 </div>
               </div>
@@ -161,61 +190,78 @@
     <section id="about" class="section about-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Sobre mí</p>
-          <h2 class="section-title" data-animate="fade-up">Desarrollo con propósito y claridad técnica</h2>
-          <p class="section-subtitle" data-animate="fade-up">
-            Soy desarrolladora Full Stack con formación técnica en desarrollo de aplicaciones web y experiencia práctica 
-            en hackathons y proyectos académicos orientados a casos reales.
+          <p class="kicker" data-animate="fade-up" data-i18n="about_kicker">Sobre mí</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="about_title">De la teoría a la práctica: proyectos que resuelven problemas reales</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="about_subtitle">
+            Tecnóloga en Análisis y Desarrollo de Sistemas, estudiante de Ingeniería y formada en desarrollo Full Stack Java. 
+            Mi experiencia viene de hackathons y proyectos académicos donde aplico lo aprendido en soluciones funcionales.
           </p>
         </div>
 
         <div class="row g-4 mt-2">
           <div class="col-12 col-lg-7">
             <div class="card-surface p-4" data-animate="fade-up">
-              <h3 class="card-title">Mi enfoque</h3>
-              <p class="muted">
-                Me especializo en construir soluciones completas: desde interfaces de usuario responsivas hasta APIs 
-                funcionales con persistencia de datos. Combino HTML, CSS, JavaScript y Bootstrap con una base sólida 
-                en Programación Orientada a Objetos en Java y bases de datos relacionales.
+              <h3 class="card-title" data-i18n="about_focus_title">Mi enfoque</h3>
+              <p class="muted" data-i18n="about_focus_p1">
+                Aprendo haciendo. Cada proyecto académico y hackathon ha sido una oportunidad para ir más allá de la teoría: 
+                en DenunciaIA desarrollé funcionalidades de IA para un problema social real; en Byte Cream construí un sistema 
+                completo con arquitectura MVC y conexión a base de datos.
               </p>
-              <p class="muted">
-                Trabajo con metodologías ágiles, control de versiones y documentación clara. Valoro el código limpio, 
-                el trabajo en equipo y la comunicación efectiva, aplicando empatía, disciplina y atención al detalle 
-                en cada proyecto.
+              <p class="muted" data-i18n="about_focus_p2">
+                Mi formación combina desarrollo multimedia (UX/UI + frontend) con backend en Java y bases de datos. 
+                Trabajo con metodologías ágiles, Git para control de versiones, y me adapto rápido a nuevas tecnologías. 
+                Busco un equipo donde pueda seguir aprendiendo mientras aporto desde el día uno.
               </p>
 
-              <div class="skills mt-4">
-                <span class="skill">HTML5</span>
-                <span class="skill">CSS3</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">Bootstrap</span>
-                <span class="skill">Java</span>
-                <span class="skill">MySQL</span>
-                <span class="skill">Git/GitHub</span>
-                <!--<span class="skill">Postman</span>-->
-                <!--<span class="skill">RESTful APIs</span>-->
+              <div class="skills-organized mt-4">
+                <div class="skill-group mb-3">
+                  <p class="small muted mb-2"><strong data-i18n="about_backend">Backend:</strong></p>
+                  <div class="skills">
+                    <span class="skill">Java</span>
+                    <span class="skill">POO</span>
+                    <span class="skill">APIs REST</span>
+                    <span class="skill">MySQL</span>
+                  </div>
+                </div>
+                <div class="skill-group mb-3">
+                  <p class="small muted mb-2"><strong data-i18n="about_frontend">Frontend:</strong></p>
+                  <div class="skills">
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Bootstrap</span>
+                  </div>
+                </div>
+                <div class="skill-group">
+                  <p class="small muted mb-2"><strong data-i18n="about_tools">Herramientas:</strong></p>
+                  <div class="skills">
+                    <span class="skill">Git/GitHub</span>
+                    <span class="skill">Vercel</span>
+                    <span class="skill">UX/UI básico</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="col-12 col-lg-5">
             <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">Lo que aporto</h3>
+              <h3 class="card-title" data-i18n="about_contribute_title">Lo que aporto</h3>
 
               <ul class="clean-list mt-3">
-                <li><i class="bi bi-check2-circle me-2"></i>Capacidad de implementar funcionalidades end-to-end</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Experiencia trabajando bajo presión en equipos multidisciplinarios</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Mentalidad orientada a la resolución de problemas</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Comunicación técnica clara y proactividad para aprender</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Validaciones robustas y arquitectura en capas</li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_1">Proyectos funcionales end-to-end (no solo teoría)</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_2">Experiencia real en hackathons con equipos bajo presión</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_3">Aprendizaje rápido y adaptabilidad a nuevas tecnologías</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_4">Pensamiento orientado a resolver problemas del usuario</span></li>
+                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_5">Comunicación clara y trabajo colaborativo</span></li>
               </ul>
 
               <div class="mt-4 d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary" href="#projects">
-                  <i class="bi bi-folder2-open me-2"></i> Ver Proyectos
+                  <i class="bi bi-folder2-open me-2"></i> <span data-i18n="about_see_projects">Ver Proyectos</span>
                 </a>
                 <a class="btn btn-outline-light" href="#contact">
-                  <i class="bi bi-envelope-paper me-2"></i> Contacto
+                  <i class="bi bi-envelope-paper me-2"></i> <span data-i18n="about_contact">Contacto</span>
                 </a>
               </div>
             </div>
@@ -229,22 +275,105 @@
     <section id="projects" class="section projects-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Portafolio</p>
-          <h2 class="section-title" data-animate="fade-up">Proyectos Destacados</h2>
-          <p class="section-subtitle" data-animate="fade-up">
-            Soluciones web y sistemas con enfoque en integración frontend-backend y lógica de negocio.
+          <p class="kicker" data-animate="fade-up" data-i18n="projects_kicker">Portafolio</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="projects_title">Proyectos Destacados</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="projects_subtitle">
+            Proyectos reales de hackathons y formación académica. Cada uno representa un problema resuelto, no solo código escrito.
           </p>
         </div>
 
         <!-- Filters -->
         <div class="filters mt-4" data-animate="fade-up">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="web">Frontend</button>
-          <button class="filter-btn" data-filter="java">Backend</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+          <button class="filter-btn" data-filter="hackathon" data-i18n="filter_hackathons">Hackathons</button>
+          <button class="filter-btn" data-filter="fullstack" data-i18n="filter_fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="web" data-i18n="filter_frontend">Frontend</button>
+          <button class="filter-btn" data-filter="java" data-i18n="filter_backend">Backend</button>
+          <button class="filter-btn" data-filter="personal" data-i18n="filter_personal">En Desarrollo</button>
         </div>
 
         <div class="row g-4 mt-1" id="projectsGrid">
+
+          <!-- Tejiendo Futuro - HACKATHON 3ER LUGAR -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
+            <article class="project-card featured-project">
+              <div class="project-thumb">
+                <img src="/IMG/tejiendo-futuro-preview.jpg" alt="Tejiendo Futuro - Incubadora Digital">
+                <span class="project-chip chip-featured">3er Lugar</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Tejiendo Futuro</h3>
+                <p class="muted small mb-2">Hackathon | Emprendimiento Rural + Impacto Social</p>
+                <p class="project-desc">
+                  Incubadora digital para emprendimientos rurales que acompana a mujeres en cada etapa de su negocio. 
+                  Plataforma que conecta emprendedoras con recursos, mentoria y comunidad.
+                </p>
+                <div class="project-features mt-2">
+                  <p class="small muted mb-1"><strong>Mi contribucion:</strong></p>
+                  <ul class="small muted">
+                    <li>Desarrollo de la plataforma web</li>
+                    <li>Diseno de experiencia de usuario</li>
+                    <li>Integracion de funcionalidades clave</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span>Web</span><span>UX/UI</span><span>Social</span>
+                  <span class="highlight">3er Lugar</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-primary me-2" href="https://devpost.com/software/tejiendo-futuro" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Devpost
+                  </a>
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                    data-title="Tejiendo Futuro - Hackathon 3er Lugar"
+                    data-desc="Incubadora digital para emprendimientos rurales que acompana a las mujeres en cada etapa de su negocio. La plataforma conecta emprendedoras rurales con recursos, mentoria y una comunidad de apoyo. Desarrollada en hackathon donde obtuvimos el 3er lugar. Mi rol incluyo el desarrollo de la plataforma web, diseno de experiencia de usuario y la integracion de funcionalidades clave para el acompanamiento de emprendedoras."
+                    data-tech="HTML5, CSS3, JavaScript, UX/UI, Diseno Web"
+                    data-github="https://github.com/Gei-del/tejiendo-futuro-conecta">
+                    <i class="bi bi-eye me-1"></i> Ver Detalles
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- DenunciaIA - PROYECTO DESTACADO HACKATHON -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
+            <article class="project-card featured-project">
+              <div class="project-thumb">
+                <img src="/IMG/denunciaia-preview.jpg" alt="DenunciaIA - Plataforma de denuncias con IA">
+                <span class="project-chip chip-featured">★ Hackathon IA</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">DenunciaIA</h3>
+                <p class="muted small mb-2">Hackathon | Impacto Social + Inteligencia Artificial</p>
+                <p class="project-desc">
+                  Plataforma que facilita la denuncia ciudadana utilizando IA para clasificar y priorizar casos. 
+                  Desarrollada en hackathon con enfoque en resolver un problema social real.
+                </p>
+                <div class="project-features mt-2">
+                  <p class="small muted mb-1"><strong>Mi contribución:</strong></p>
+                  <ul class="small muted">
+                    <li>Desarrollo de funcionalidades de integración con IA</li>
+                    <li>Implementación de interfaz de usuario</li>
+                    <li>Colaboración en equipo multidisciplinario</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span>IA</span><span>JavaScript</span><span>API</span>
+                  <span class="highlight">Impacto Social</span>
+                </div>
+                <div class="project-actions">
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                    data-title="DenunciaIA - Hackathon de Impacto Social"
+                    data-desc="Plataforma desarrollada en hackathon que utiliza inteligencia artificial para facilitar y optimizar el proceso de denuncias ciudadanas. El sistema clasifica automáticamente los casos según su urgencia y tipo, permitiendo una respuesta más eficiente. Mi rol incluyó el desarrollo de las funcionalidades de integración con el modelo de IA, la implementación de la interfaz de usuario y la colaboración activa con el equipo para cumplir los objetivos en tiempo limitado."
+                    data-tech="JavaScript, APIs de IA, HTML5, CSS3, Trabajo en equipo"
+                    data-github="https://github.com/Gei-del">
+                    <i class="bi bi-eye me-1"></i> Ver Detalles
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
 
           <!-- Byte Cream - PROYECTO ESTRELLA -->
           <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack web java">
@@ -287,7 +416,7 @@
           </div>
 
           <!-- Hackathon Vortex -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack">
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
             <article class="project-card">
               <div class="project-thumb">
                 <img src="/IMG/vortex.PNG" alt="Hackathon Vortex Tech">
@@ -364,6 +493,48 @@
             </article>
           </div>
 
+          <!-- Tejiendo Rutas - PROYECTO PERSONAL EN DESARROLLO -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web personal">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="/IMG/tejiendo-rutas-preview.jpg" alt="Tejiendo Rutas - Juego de Puzzles">
+                <span class="project-chip chip-dev">En Desarrollo</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Tejiendo Rutas</h3>
+                <p class="muted small mb-2">Proyecto Personal | Juego de Puzzles + Plataformas</p>
+                <p class="project-desc">
+                  Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan 
+                  energia, datos y colaboracion. Inspirado en como la tecnologia construye redes urbanas.
+                </p>
+                <div class="project-features mt-2">
+                  <p class="small muted mb-1"><strong>Mecanicas:</strong></p>
+                  <ul class="small muted">
+                    <li>Conectar nodos usando hilos</li>
+                    <li>Optimizar recursos (economia)</li>
+                    <li>Restaurar color y vida a la ciudad</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span>Game Dev</span><span>JavaScript</span><span>Canvas</span>
+                  <span class="highlight">En Curso</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-primary me-2" href="https://github.com/Gei-del/Tejiendo-rutas" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github me-1"></i> GitHub
+                  </a>
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                    data-title="Tejiendo Rutas - Juego en Desarrollo"
+                    data-desc="Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan energia, datos y colaboracion. Las mecanicas incluyen conectar nodos usando hilos, optimizar recursos en un sistema de economia, y restaurar color y vida a la ciudad. Inspirado en como la tecnologia y la economia construyen redes urbanas. Proyecto personal actualmente en desarrollo."
+                    data-tech="JavaScript, HTML5 Canvas, Game Design, Logica de Puzzles"
+                    data-github="https://github.com/Gei-del/Tejiendo-rutas">
+                    <i class="bi bi-eye me-1"></i> Ver Detalles
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <!-- Tienda Deportiva -->
           <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web">
             <article class="project-card">
@@ -411,10 +582,11 @@
     <section id="resume" class="section resume-section">
       <div class="container py-5">
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Experiencia</p>
-          <h2 class="section-title" data-animate="fade-up">Formación & Trayectoria Práctica</h2>
-          <p class="section-subtitle" data-animate="fade-up">
-            Desarrolladora Full Stack Junior lista para prácticas, primer empleo o proyectos freelance.
+          <p class="kicker" data-animate="fade-up" data-i18n="exp_kicker">Trayectoria</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="exp_title">Formación sólida + experiencia práctica en proyectos reales</h2>
+          <p class="section-subtitle" data-animate="fade-up" data-i18n="exp_subtitle">
+            Sin experiencia laboral formal aún, pero con formación técnica completa y múltiples proyectos 
+            desarrollados en hackathons y entornos académicos colaborativos.
           </p>
         </div>
 
@@ -432,11 +604,11 @@
                 <div class="timeline-item">
                   <div class="dot"></div>
                   <div class="content">
-                    <p class="t-title">Hackathon Vortex 2024</p>
-                    <p class="t-meta muted">Desarrolladora Full Stack</p>
+                    <p class="t-title">Tejiendo Futuro - Hackathon <span class="badge bg-warning text-dark ms-2">3er Lugar</span></p>
+                    <p class="t-meta muted">Incubadora Digital · Emprendimiento Rural</p>
                     <p class="t-desc muted">
-                      Desarrollo de solución tecnológica en equipo bajo tiempo limitado. Implementación de 
-                      funcionalidades end-to-end y presentación técnica ante jurado especializado.
+                      Plataforma para emprendedoras rurales. Desarrollo web, diseno UX/UI e integracion 
+                      de funcionalidades. Tercer lugar en competencia de hackathon.
                     </p>
                   </div>
                 </div>
@@ -444,11 +616,35 @@
                 <div class="timeline-item">
                   <div class="dot"></div>
                   <div class="content">
-                    <p class="t-title">Hackathon E-Commerce Deportivo</p>
+                    <p class="t-title">DenunciaIA - Hackathon</p>
+                    <p class="t-meta muted">Desarrollo con IA · Impacto Social</p>
+                    <p class="t-desc muted">
+                      Plataforma de denuncias ciudadanas con IA. Desarrolle funcionalidades de integracion 
+                      con el modelo de IA y colabore en equipo para resolver un problema social real.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">Hackathon Vortex 2024</p>
+                    <p class="t-meta muted">Desarrolladora Full Stack</p>
+                    <p class="t-desc muted">
+                      Solución tecnológica con IA para alertas proactivas. Desarrollo backend e 
+                      implementación de funcionalidades clave bajo presión de tiempo.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
+                    <p class="t-title">E-Commerce Deportivo - Hackathon</p>
                     <p class="t-meta muted">Desarrolladora Frontend</p>
                     <p class="t-desc muted">
-                      Diseño e implementación de interfaces de usuario responsivas. Lógica de negocio en 
-                      JavaScript e integración con mockups de backend.
+                      Interfaces responsivas y lógica de carrito de compras en JavaScript. 
+                      Trabajo colaborativo en equipo con metodología ágil.
                     </p>
                   </div>
                 </div>
@@ -533,11 +729,39 @@
       <div class="container py-5">
 
         <div class="section-head">
-          <p class="kicker" data-animate="fade-up">Contacto</p>
-          <h2 class="section-title" data-animate="fade-up">¿Trabajamos juntos?</h2>
-          <p class="section-subtitle" data-animate="fade-up">
-            Estoy disponible para oportunidades de prácticas, primer empleo o proyectos freelance.
-          </p>
+          <p class="kicker" data-animate="fade-up" data-i18n="contact_kicker">Contacto</p>
+          <h2 class="section-title" data-animate="fade-up" data-i18n="contact_title">Busco mi primera oportunidad como desarrolladora</h2>
+        </div>
+
+        <!-- Recruiter-friendly availability cards -->
+        <div class="recruiter-info row g-3 mt-2 mb-4" data-animate="fade-up">
+          <div class="col-12 col-md-4">
+            <div class="info-chip">
+              <i class="bi bi-briefcase"></i>
+              <div>
+                <p class="chip-label" data-i18n="contact_looking">Busco</p>
+                <p class="chip-value" data-i18n="contact_looking_value">Practicas / Primer empleo</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="info-chip">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <p class="chip-label" data-i18n="contact_modality">Modalidad</p>
+                <p class="chip-value" data-i18n="contact_modality_value">Remoto / Hibrido / Presencial</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="info-chip info-chip-highlight">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <div>
+                <p class="chip-label" data-i18n="contact_status">Estado</p>
+                <p class="chip-value" data-i18n="contact_status_value">Disponibilidad inmediata</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="row g-4 mt-2 align-items-stretch">
@@ -545,7 +769,7 @@
           <!-- Left: Contact Info -->
           <div class="col-12 col-lg-5">
             <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">Información de Contacto</h3>
+              <h3 class="card-title" data-i18n="contact_info_title">Información de Contacto</h3>
 
               <div class="contact-list mt-3">
                 <a class="contact-item" href="mailto:pontongeidy@gmail.com">
@@ -581,10 +805,6 @@
                 </a>
               </div>
 
-              <p class="mt-4 muted small">
-                Revisa mis proyectos en GitHub y conecta conmigo en LinkedIn. 
-                Estoy abierta a conversaciones sobre oportunidades laborales.
-              </p>
             </div>
           </div>
 
@@ -612,13 +832,13 @@
   <footer class="site-footer">
     <div class="container py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
       <p class="m-0 muted small">
-        © <span id="year"></span> Lorena Pontón · Desarrolladora Full Stack Junior
+        © <span id="year"></span> Lorena Pontón · <span data-i18n="footer_made">Diseñado y desarrollado por</span> LP_DEV
       </p>
 
       <div class="footer-links d-flex gap-3">
-        <a href="#home" class="muted small">Inicio</a>
-        <a href="#projects" class="muted small">Proyectos</a>
-        <a href="#contact" class="muted small">Contacto</a>
+        <a href="#home" class="muted small" data-i18n="nav_home">Inicio</a>
+        <a href="#projects" class="muted small" data-i18n="nav_projects">Proyectos</a>
+        <a href="#contact" class="muted small" data-i18n="nav_contact">Contacto</a>
       </div>
     </div>
   </footer>
@@ -654,6 +874,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="/JS/translations.js"></script>
   <script src="/JS/portafolio.js"></script>
 
 </body>
