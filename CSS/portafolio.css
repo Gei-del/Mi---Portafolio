@@ -597,6 +597,27 @@ body {
   display: none !important;
 }
 
+/* Featured Project Highlight */
+.featured-project {
+  border: 1px solid rgba(76, 201, 240, 0.4);
+  box-shadow: 0 0 30px rgba(76, 201, 240, 0.15);
+}
+
+.featured-project:hover {
+  border-color: var(--accent);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5),
+              0 0 40px rgba(76, 201, 240, 0.25);
+}
+
+/* Skills Organized */
+.skills-organized .skill-group {
+  margin-bottom: 1rem;
+}
+
+.skills-organized .skill-group:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- Timeline ---------- */
 .timeline {
   display: grid;
