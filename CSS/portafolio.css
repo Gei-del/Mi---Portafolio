@@ -717,6 +717,65 @@ body {
   background: rgba(11, 15, 20, 0.5);
 }
 
+/* Recruiter-friendly info chips */
+.recruiter-info {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.info-chip:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.info-chip i {
+  font-size: 1.5rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.info-chip .chip-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.info-chip .chip-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+
+.info-chip-highlight {
+  background: rgba(76, 201, 240, 0.08);
+  border-color: rgba(76, 201, 240, 0.3);
+}
+
+.info-chip-highlight i {
+  color: #22c55e;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
 .contact-list {
   display: grid;
   gap: 12px;
