@@ -23,9 +23,25 @@
   <meta property="og:description" content="Construyo soluciones reales desde hackathons y proyectos académicos. Backend Java + Frontend moderno. Busco mi primera oportunidad profesional." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lorena Pontón | Full Stack Java Developer" />
+  <meta name="twitter:description" content="Junior Full Stack Developer building real solutions through hackathons and academic projects." />
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="color-scheme" content="dark" />
+  
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 </head>
 
 <body>
+
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <!-- Background Effects -->
   <div class="bg-grid" aria-hidden="true"></div>
@@ -40,7 +56,7 @@
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú" id="menuToggle">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -71,7 +87,7 @@
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
 
     <!-- HERO SECTION -->
     <section id="home" class="section hero-section">
@@ -286,7 +302,7 @@
               </div>
               <div class="project-body">
                 <h3 class="project-title">DenunciaIA</h3>
-                <p class="muted small mb-2">Hackathon · Impacto Social + Inteligencia Artificial</p>
+                <p class="muted small mb-2">Hackathon | Impacto Social + Inteligencia Artificial</p>
                 <p class="project-desc">
                   Plataforma que facilita la denuncia ciudadana utilizando IA para clasificar y priorizar casos. 
                   Desarrollada en hackathon con enfoque en resolver un problema social real.

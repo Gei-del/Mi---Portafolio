@@ -86,7 +86,11 @@ const translations = {
 
     // Footer
     footer_rights: "Todos los derechos reservados.",
-    footer_made: "Diseñado y desarrollado por"
+    footer_made: "Diseñado y desarrollado por",
+
+    // Accessibility
+    skip_link: "Saltar al contenido principal",
+    menu_open: "Abrir menú"
   },
 
   en: {
@@ -171,7 +175,11 @@ const translations = {
 
     // Footer
     footer_rights: "All rights reserved.",
-    footer_made: "Designed and developed by"
+    footer_made: "Designed and developed by",
+
+    // Accessibility
+    skip_link: "Skip to main content",
+    menu_open: "Open menu"
   }
 };
 

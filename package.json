@@ -1,0 +1,17 @@
+{
+  "name": "lorena-ponton-portfolio",
+  "version": "1.0.0",
+  "description": "Portafolio profesional de Lorena Pontón - Desarrolladora Full Stack Java",
+  "scripts": {
+    "dev": "npx serve -l 3000",
+    "start": "npx serve -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "java",
+    "developer"
+  ],
+  "author": "Lorena Pontón",
+  "license": "MIT"
+}

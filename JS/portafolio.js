@@ -423,6 +423,17 @@ function setupLanguageToggle() {
         metaDesc.content = "Desarrolladora Full Stack Java en formación. Construyo soluciones reales en hackathons y proyectos académicos. Backend Java + Frontend moderno + UX. Busco mi primera oportunidad profesional.";
       }
     }
+
+    // Update accessibility elements
+    const skipLink = $(".skip-link");
+    if (skipLink && t.skip_link) {
+      skipLink.textContent = t.skip_link;
+    }
+
+    const menuToggle = $("#menuToggle");
+    if (menuToggle && t.menu_open) {
+      menuToggle.setAttribute("aria-label", t.menu_open);
+    }
   }
 }
 
