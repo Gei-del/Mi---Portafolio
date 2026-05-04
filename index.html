@@ -289,9 +289,52 @@
           <button class="filter-btn" data-filter="fullstack" data-i18n="filter_fullstack">Full Stack</button>
           <button class="filter-btn" data-filter="web" data-i18n="filter_frontend">Frontend</button>
           <button class="filter-btn" data-filter="java" data-i18n="filter_backend">Backend</button>
+          <button class="filter-btn" data-filter="personal" data-i18n="filter_personal">En Desarrollo</button>
         </div>
 
         <div class="row g-4 mt-1" id="projectsGrid">
+
+          <!-- Tejiendo Futuro - HACKATHON 3ER LUGAR -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
+            <article class="project-card featured-project">
+              <div class="project-thumb">
+                <img src="/IMG/tejiendo-futuro-preview.jpg" alt="Tejiendo Futuro - Incubadora Digital">
+                <span class="project-chip chip-featured">3er Lugar</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Tejiendo Futuro</h3>
+                <p class="muted small mb-2">Hackathon | Emprendimiento Rural + Impacto Social</p>
+                <p class="project-desc">
+                  Incubadora digital para emprendimientos rurales que acompana a mujeres en cada etapa de su negocio. 
+                  Plataforma que conecta emprendedoras con recursos, mentoria y comunidad.
+                </p>
+                <div class="project-features mt-2">
+                  <p class="small muted mb-1"><strong>Mi contribucion:</strong></p>
+                  <ul class="small muted">
+                    <li>Desarrollo de la plataforma web</li>
+                    <li>Diseno de experiencia de usuario</li>
+                    <li>Integracion de funcionalidades clave</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span>Web</span><span>UX/UI</span><span>Social</span>
+                  <span class="highlight">3er Lugar</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-primary me-2" href="https://devpost.com/software/tejiendo-futuro" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Devpost
+                  </a>
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                    data-title="Tejiendo Futuro - Hackathon 3er Lugar"
+                    data-desc="Incubadora digital para emprendimientos rurales que acompana a las mujeres en cada etapa de su negocio. La plataforma conecta emprendedoras rurales con recursos, mentoria y una comunidad de apoyo. Desarrollada en hackathon donde obtuvimos el 3er lugar. Mi rol incluyo el desarrollo de la plataforma web, diseno de experiencia de usuario y la integracion de funcionalidades clave para el acompanamiento de emprendedoras."
+                    data-tech="HTML5, CSS3, JavaScript, UX/UI, Diseno Web"
+                    data-github="https://github.com/Gei-del/tejiendo-futuro-conecta">
+                    <i class="bi bi-eye me-1"></i> Ver Detalles
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
 
           <!-- DenunciaIA - PROYECTO DESTACADO HACKATHON -->
           <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
@@ -450,6 +493,48 @@
             </article>
           </div>
 
+          <!-- Tejiendo Rutas - PROYECTO PERSONAL EN DESARROLLO -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web personal">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="/IMG/tejiendo-rutas-preview.jpg" alt="Tejiendo Rutas - Juego de Puzzles">
+                <span class="project-chip chip-dev">En Desarrollo</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Tejiendo Rutas</h3>
+                <p class="muted small mb-2">Proyecto Personal | Juego de Puzzles + Plataformas</p>
+                <p class="project-desc">
+                  Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan 
+                  energia, datos y colaboracion. Inspirado en como la tecnologia construye redes urbanas.
+                </p>
+                <div class="project-features mt-2">
+                  <p class="small muted mb-1"><strong>Mecanicas:</strong></p>
+                  <ul class="small muted">
+                    <li>Conectar nodos usando hilos</li>
+                    <li>Optimizar recursos (economia)</li>
+                    <li>Restaurar color y vida a la ciudad</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span>Game Dev</span><span>JavaScript</span><span>Canvas</span>
+                  <span class="highlight">En Curso</span>
+                </div>
+                <div class="project-actions">
+                  <a class="btn btn-sm btn-outline-primary me-2" href="https://github.com/Gei-del/Tejiendo-rutas" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github me-1"></i> GitHub
+                  </a>
+                  <button class="btn btn-sm btn-primary" data-open-modal
+                    data-title="Tejiendo Rutas - Juego en Desarrollo"
+                    data-desc="Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan energia, datos y colaboracion. Las mecanicas incluyen conectar nodos usando hilos, optimizar recursos en un sistema de economia, y restaurar color y vida a la ciudad. Inspirado en como la tecnologia y la economia construyen redes urbanas. Proyecto personal actualmente en desarrollo."
+                    data-tech="JavaScript, HTML5 Canvas, Game Design, Logica de Puzzles"
+                    data-github="https://github.com/Gei-del/Tejiendo-rutas">
+                    <i class="bi bi-eye me-1"></i> Ver Detalles
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <!-- Tienda Deportiva -->
           <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web">
             <article class="project-card">
@@ -519,11 +604,23 @@
                 <div class="timeline-item">
                   <div class="dot"></div>
                   <div class="content">
+                    <p class="t-title">Tejiendo Futuro - Hackathon <span class="badge bg-warning text-dark ms-2">3er Lugar</span></p>
+                    <p class="t-meta muted">Incubadora Digital · Emprendimiento Rural</p>
+                    <p class="t-desc muted">
+                      Plataforma para emprendedoras rurales. Desarrollo web, diseno UX/UI e integracion 
+                      de funcionalidades. Tercer lugar en competencia de hackathon.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="dot"></div>
+                  <div class="content">
                     <p class="t-title">DenunciaIA - Hackathon</p>
                     <p class="t-meta muted">Desarrollo con IA · Impacto Social</p>
                     <p class="t-desc muted">
-                      Plataforma de denuncias ciudadanas con IA. Desarrollé funcionalidades de integración 
-                      con el modelo de IA y colaboré en equipo para resolver un problema social real.
+                      Plataforma de denuncias ciudadanas con IA. Desarrolle funcionalidades de integracion 
+                      con el modelo de IA y colabore en equipo para resolver un problema social real.
                     </p>
                   </div>
                 </div>

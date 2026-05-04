@@ -565,6 +565,12 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
+.chip-dev {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 600;
+}
+
 .project-body {
   padding: 1.5rem;
   flex: 1;
