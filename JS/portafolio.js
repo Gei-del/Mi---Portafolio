@@ -437,20 +437,5 @@ function setupLanguageToggle() {
   }
 }
 
-/* ---------- Console Message for Recruiters ---------- */
-console.log(
-  "%c👋 Hola Reclutador!",
-  "font-size: 24px; font-weight: bold; color: #4cc9f0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);"
-);
-console.log(
-  "%cGracias por revisar mi portafolio. Este sitio fue desarrollado con:",
-  "font-size: 14px; color: #9fb0c3;"
-);
-console.log(
-  "%c• HTML5, CSS3, JavaScript\n• Bootstrap 5\n• GSAP para animaciones\n• Diseño responsivo mobile-first",
-  "font-size: 13px; color: #e6edf3; line-height: 1.6;"
-);
-console.log(
-  "%c💼 ¿Hablamos? → pontongeidy@gmail.com",
-  "font-size: 15px; font-weight: bold; color: #4cc9f0;"
-);
+/* ---------- Console Message for Recruiters (Production Ready) ---------- */
+/* Mensaje visible solo en modo desarrollo - removido para producción */
