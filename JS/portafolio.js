@@ -1,441 +1,172 @@
-/* =========================
-   Portafolio Profesional JS - Lorena Pontón
-   ========================= */
+(() => {
+  'use strict';
 
-/* ---------- Helpers ---------- */
-const $ = (sel, parent = document) => parent.querySelector(sel);
-const $$ = (sel, parent = document) => Array.from(parent.querySelectorAll(sel));
+  const body = document.body;
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  const recruiterToggle = document.getElementById('recruiterToggle');
+  const filterButtons = [...document.querySelectorAll('.filter-btn')];
+  const projectCards = [...document.querySelectorAll('.project-card')];
+  const copyEmailButton = document.getElementById('copyEmail');
+  const toast = document.getElementById('toast');
+  const year = document.getElementById('year');
+  const navLinks = [...document.querySelectorAll('.main-nav a')];
 
-/* ---------- DOM Ready ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  setFooterYear();
-  setupSmoothScrollAndActiveNav();
-  setupProjectFilters();
-  setupProjectModal();
-  setupTiltCards();
-  setupGSAPAnimations();
-  setupScrollToTop();
-  setupLanguageToggle();
-});
+  if (year) year.textContent = new Date().getFullYear();
 
-/* ---------- Footer Year ---------- */
-function setFooterYear() {
-  const yearEl = $("#year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-}
+  // Mobile navigation
+  const closeMenu = () => {
+    if (!mainNav || !menuToggle) return;
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.innerHTML = '<i class="bi bi-list"></i>';
+  };
 
-/* ---------- Smooth Scroll + Active Nav ---------- */
-function setupSmoothScrollAndActiveNav() {
-  const navLinks = $$("a[data-nav]");
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  }
+
+  // Reveal on scroll
+  const revealElements = [...document.querySelectorAll('.reveal')];
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  // Project filters
+  const applyFilter = filter => {
+    projectCards.forEach(card => {
+      const categories = (card.dataset.category || '').split(' ');
+      const shouldShow = filter === 'all' || categories.includes(filter);
+      card.classList.toggle('is-hidden', !shouldShow);
+    });
+  };
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter || 'all';
+      filterButtons.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      applyFilter(filter);
+    });
+  });
+
+  // Recruiter mode: removes decorative friction and keeps the key evidence visible.
+  const recruiterStorageKey = 'lorena-portfolio-recruiter-mode';
+
+  const setRecruiterMode = enabled => {
+    body.classList.toggle('recruiter-mode', enabled);
+
+    if (recruiterToggle) {
+      recruiterToggle.setAttribute('aria-pressed', String(enabled));
+      recruiterToggle.innerHTML = enabled
+        ? '<i class="bi bi-x-circle"></i><span>Salir del modo reclutador</span>'
+        : '<i class="bi bi-briefcase"></i><span>Modo reclutador</span>';
+    }
+
+    if (enabled) {
+      applyFilter('all');
+      filterButtons.forEach((button, index) => button.classList.toggle('active', index === 0));
+    }
+
+    try {
+      sessionStorage.setItem(recruiterStorageKey, String(enabled));
+    } catch (_) {
+      // Storage may be blocked; the mode still works for the current page.
+    }
+  };
+
+  try {
+    const savedMode = sessionStorage.getItem(recruiterStorageKey) === 'true';
+    setRecruiterMode(savedMode);
+  } catch (_) {
+    setRecruiterMode(false);
+  }
+
+  recruiterToggle?.addEventListener('click', () => {
+    setRecruiterMode(!body.classList.contains('recruiter-mode'));
+  });
+
+  // Keyboard shortcut: R toggles recruiter mode when the user is not typing.
+  document.addEventListener('keydown', event => {
+    const target = event.target;
+    const isTyping = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target?.isContentEditable;
+    if (!isTyping && event.key.toLowerCase() === 'r' && !event.metaKey && !event.ctrlKey && !event.altKey) {
+      setRecruiterMode(!body.classList.contains('recruiter-mode'));
+    }
+  });
+
+  // Copy email interaction
+  let toastTimer;
+  const showToast = message => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2200);
+  };
+
+  copyEmailButton?.addEventListener('click', async () => {
+    const email = copyEmailButton.dataset.email;
+    if (!email) return;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      showToast('Email copiado');
+    } catch (_) {
+      const textarea = document.createElement('textarea');
+      textarea.value = email;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+      showToast('Email copiado');
+    }
+  });
+
+  // Active navigation state based on the visible section.
   const sections = navLinks
-    .map((a) => document.querySelector(a.getAttribute("href")))
+    .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
 
-  // Smooth scrolling
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
+  if ('IntersectionObserver' in window && sections.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-      const target = document.querySelector(href);
-      if (!target) return;
+      if (!visible) return;
+      const activeId = `#${visible.target.id}`;
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === activeId));
+    }, { threshold: [0.2, 0.45, 0.65], rootMargin: '-20% 0px -55% 0px' });
 
-      e.preventDefault();
-      
-      // Offset for sticky header
-      const headerHeight = $(".site-header")?.offsetHeight || 70;
-      const targetPosition = target.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-
-      // Close mobile menu if open
-      const navMenu = $("#navMenu");
-      if (navMenu && navMenu.classList.contains("show")) {
-        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navMenu);
-        bsCollapse.hide();
-      }
-    });
-  });
-
-  // Active link on scroll (IntersectionObserver)
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const id = `#${entry.target.id}`;
-        navLinks.forEach((a) => {
-          const isActive = a.getAttribute("href") === id;
-          a.classList.toggle("active", isActive);
-        });
-      });
-    },
-    {
-      root: null,
-      threshold: 0.5,
-      rootMargin: "-80px 0px -80% 0px"
-    }
-  );
-
-  sections.forEach((sec) => observer.observe(sec));
-}
-
-/* ---------- Projects: Filters ---------- */
-function setupProjectFilters() {
-  const filterButtons = $$(".filter-btn");
-  const items = $$(".project-item");
-
-  if (!filterButtons.length || !items.length) return;
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = btn.dataset.filter;
-
-      // Update active state
-      filterButtons.forEach((b) => b.classList.toggle("active", b === btn));
-
-      // Filter items with animation
-      items.forEach((item, index) => {
-        const categories = (item.dataset.category || "").split(" ");
-        const shouldShow = filter === "all" || categories.includes(filter);
-
-        if (shouldShow) {
-          item.classList.remove("is-hidden");
-          // Stagger animation
-          if (window.gsap) {
-            gsap.fromTo(
-              item,
-              { opacity: 0, y: 20 },
-              { 
-                opacity: 1, 
-                y: 0, 
-                duration: 0.4, 
-                delay: index * 0.05,
-                ease: "power2.out" 
-              }
-            );
-          }
-        } else {
-          item.classList.add("is-hidden");
-        }
-      });
-    });
-  });
-}
-
-/* ---------- Projects: Modal ---------- */
-function setupProjectModal() {
-  const modalEl = $("#projectModal");
-  if (!modalEl) return;
-
-  const modalTitle = $("#modalTitle");
-  const modalDesc = $("#modalDesc");
-  const modalTech = $("#modalTech");
-  const modalGithub = $("#modalGithub");
-
-  const bsModal = new bootstrap.Modal(modalEl);
-
-  const openButtons = $$("[data-open-modal]");
-  openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const title = btn.dataset.title || "Proyecto";
-      const desc = btn.dataset.desc || "Sin descripción.";
-      const tech = btn.dataset.tech || "Tecnologías no especificadas";
-      const github = btn.dataset.github || "#";
-
-      if (modalTitle) modalTitle.textContent = title;
-      if (modalDesc) modalDesc.textContent = desc;
-      if (modalTech) modalTech.textContent = tech;
-
-      if (modalGithub) {
-        modalGithub.href = github;
-        modalGithub.style.display = github && github !== "#" ? "inline-flex" : "none";
-      }
-
-      bsModal.show();
-    });
-  });
-}
-
-/* ---------- Tilt 3D Effect ---------- */
-function setupTiltCards() {
-  const tiltEls = $$("[data-tilt]");
-  if (!tiltEls.length) return;
-
-  const maxTilt = 8;
-  const scale = 1.03;
-  const perspective = 1000;
-
-  tiltEls.forEach((el) => {
-    el.style.transformStyle = "preserve-3d";
-    el.style.transition = "transform 200ms ease-out";
-
-    el.addEventListener("mousemove", (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const midX = rect.width / 2;
-      const midY = rect.height / 2;
-
-      const rotY = ((x - midX) / midX) * maxTilt;
-      const rotX = -((y - midY) / midY) * maxTilt;
-
-      el.style.transform = `perspective(${perspective}px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`;
-    });
-
-    el.addEventListener("mouseleave", () => {
-      el.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale(1)`;
-    });
-  });
-}
-
-/* ---------- GSAP Animations ---------- */
-function setupGSAPAnimations() {
-  if (!window.gsap) return;
-
-  // Register plugin
-  if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
-
-  // Hero entrance
-  gsap.from(".hero-left > *", {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: "power2.out",
-    delay: 0.2
-  });
-
-  gsap.from(".hero-right", {
-    opacity: 0,
-    scale: 0.95,
-    duration: 1,
-    ease: "power2.out",
-    delay: 0.3
-  });
-
-  // Scroll reveal for elements with data-animate
-  const animEls = $$("[data-animate]");
-  animEls.forEach((el) => {
-    const type = el.dataset.animate || "fade-up";
-
-    let fromVars = { opacity: 0 };
-    const toVars = { 
-      opacity: 1, 
-      duration: 0.8, 
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none reverse",
-        once: false
-      }
-    };
-
-    if (type === "fade-up") {
-      fromVars.y = 20;
-      toVars.y = 0;
-    }
-    if (type === "zoom-in") {
-      fromVars.scale = 0.95;
-      toVars.scale = 1;
-    }
-
-    gsap.fromTo(el, fromVars, toVars);
-  });
-
-  // Parallax effect on background glow
-  const bgGlow = $(".bg-glow");
-  if (bgGlow) {
-    window.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 15;
-      const y = (e.clientY / window.innerHeight - 0.5) * 15;
-      gsap.to(bgGlow, { x, y, duration: 1, ease: "power2.out" });
-    });
+    sections.forEach(section => sectionObserver.observe(section));
   }
-
-  // Navbar scroll effect
-  const header = $(".site-header");
-  if (header) {
-    ScrollTrigger.create({
-      start: "top -50",
-      end: 99999,
-      toggleClass: { targets: header, className: "scrolled" },
-      onUpdate: (self) => {
-        if (self.direction === -1) {
-          gsap.to(header, { y: 0, duration: 0.3 });
-        } else if (self.progress > 0.05) {
-          gsap.to(header, { y: -100, duration: 0.3 });
-        }
-      }
-    });
-  }
-}
-
-/* ---------- Scroll to Top Button ---------- */
-function setupScrollToTop() {
-  // Create button if doesn't exist
-  let scrollBtn = $("#scrollTopBtn");
-  
-  if (!scrollBtn) {
-    scrollBtn = document.createElement("button");
-    scrollBtn.id = "scrollTopBtn";
-    scrollBtn.className = "scroll-top-btn";
-    scrollBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
-    scrollBtn.setAttribute("aria-label", "Volver arriba");
-    document.body.appendChild(scrollBtn);
-
-    // Add styles
-    const style = document.createElement("style");
-    style.textContent = `
-      .scroll-top-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--accent);
-        color: #000;
-        border: none;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 20px rgba(76, 201, 240, 0.4);
-        transition: all 0.3s ease;
-        z-index: 999;
-      }
-      .scroll-top-btn.show {
-        display: flex;
-      }
-      .scroll-top-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(76, 201, 240, 0.6);
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  // Show/hide on scroll
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      scrollBtn.classList.add("show");
-    } else {
-      scrollBtn.classList.remove("show");
-    }
-  });
-
-  // Scroll to top on click
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-}
-
-/* ---------- Performance: Lazy Load Images ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  if ("IntersectionObserver" in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-            img.removeAttribute("data-src");
-          }
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-
-    $$("img[data-src]").forEach((img) => imageObserver.observe(img));
-  }
-});
-
-/* ---------- Language Toggle System ---------- */
-function setupLanguageToggle() {
-  const langButtons = $$(".lang-btn");
-  if (!langButtons.length || typeof translations === 'undefined') return;
-
-  // Get saved language or detect from browser
-  let currentLang = localStorage.getItem('portfolio-lang') || 
-                    (navigator.language.startsWith('en') ? 'en' : 'es');
-  
-  // Apply initial language
-  applyLanguage(currentLang);
-  updateLangButtons(currentLang);
-
-  // Setup button listeners
-  langButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      if (lang === currentLang) return;
-
-      currentLang = lang;
-      localStorage.setItem('portfolio-lang', lang);
-      applyLanguage(lang);
-      updateLangButtons(lang);
-
-      // Update html lang attribute
-      document.documentElement.lang = lang;
-    });
-  });
-
-  function updateLangButtons(lang) {
-    langButtons.forEach((btn) => {
-      const isActive = btn.dataset.lang === lang;
-      btn.classList.toggle("active", isActive);
-      btn.setAttribute("aria-pressed", isActive.toString());
-    });
-  }
-
-  function applyLanguage(lang) {
-    const t = translations[lang];
-    if (!t) return;
-
-    // Update all elements with data-i18n attribute
-    $$("[data-i18n]").forEach((el) => {
-      const key = el.dataset.i18n;
-      if (t[key]) {
-        el.textContent = t[key];
-      }
-    });
-
-    // Update page title and meta based on language
-    if (lang === 'en') {
-      document.title = "Lorena Pontón | Full Stack Java Developer in training";
-      const metaDesc = $('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.content = "Full Stack Java Developer in training. I build real solutions in hackathons and academic projects. Java Backend + Modern Frontend + UX. Looking for my first professional opportunity.";
-      }
-    } else {
-      document.title = "Lorena Pontón | Desarrolladora Full Stack Java en formación";
-      const metaDesc = $('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.content = "Desarrolladora Full Stack Java en formación. Construyo soluciones reales en hackathons y proyectos académicos. Backend Java + Frontend moderno + UX. Busco mi primera oportunidad profesional.";
-      }
-    }
-
-    // Update accessibility elements
-    const skipLink = $(".skip-link");
-    if (skipLink && t.skip_link) {
-      skipLink.textContent = t.skip_link;
-    }
-
-    const menuToggle = $("#menuToggle");
-    if (menuToggle && t.menu_open) {
-      menuToggle.setAttribute("aria-label", t.menu_open);
-    }
-  }
-}
-
-/* ---------- Console Message for Recruiters (Production Ready) ---------- */
-/* Mensaje visible solo en modo desarrollo - removido para producción */
+})();
