@@ -1,890 +1,327 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lorena Pontón | Desarrolladora Full Stack Java en formación</title>
-  <meta name="description" content="Desarrolladora Full Stack Java en formación. Construyo soluciones reales en hackathons y proyectos académicos. Backend Java + Frontend moderno + UX. Busco mi primera oportunidad profesional." />
-  <meta name="keywords" content="desarrolladora junior, full stack java, hackathon, Colombia, primer empleo desarrollador, backend java, frontend javascript" />
-  <meta name="author" content="Lorena Pontón" />
+  <title>Lorena Pontón | Ingeniería de Sistemas · Desarrolladora Full Stack</title>
+  <meta name="description" content="Portafolio profesional de Lorena Pontón: Ingeniería de Sistemas, desarrollo Full Stack, backend Java & Spring Boot, React/Next.js, SQL e inteligencia artificial aplicada." />
+  <meta name="keywords" content="Lorena Pontón, desarrolladora full stack, Java, Spring Boot, React, Next.js, SQL, inteligencia artificial, Colombia, ingeniería de sistemas" />
+  <meta name="author" content="Geidy Lorena Ponton Campo" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="color-scheme" content="dark" />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/CSS/portafolio.css" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Lorena Pontón | Desarrolladora Full Stack Java en formación" />
-  <meta property="og:description" content="Construyo soluciones reales desde hackathons y proyectos académicos. Backend Java + Frontend moderno. Busco mi primera oportunidad profesional." />
+  <meta property="og:title" content="Lorena Pontón | Desarrolladora Full Stack" />
+  <meta property="og:description" content="Backend Java & Spring Boot · React/Next.js · SQL · IA aplicada. Proyectos reales, hackathons y productos tecnológicos." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lorena Pontón | Full Stack Java Developer" />
-  <meta name="twitter:description" content="Junior Full Stack Developer building real solutions through hackathons and academic projects." />
 
-  <!-- Theme & PWA -->
-  <meta name="theme-color" content="#0a0a0f" />
-  <meta name="color-scheme" content="dark" />
-  
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/IMG/logo%20portafolio.png" />
-  <link rel="apple-touch-icon" href="/IMG/logo%20portafolio.png" />
-  
-  <!-- Canonical URL - Update with your actual domain -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/CSS/portafolio.css" />
+  <link rel="icon" type="image/png" href="/IMG/logo%20portafolio.png" />
   <link rel="canonical" href="https://lorena-ponton.vercel.app/" />
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
 
-  <!-- Skip to main content (Accessibility) -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- Background Effects -->
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
-
-  <!-- NAVBAR -->
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark container py-3">
-      <a class="navbar-brand fw-semibold brand" href="#home">
-        <span class="brand-dot"></span>
-        <span>Lorena Pontón</span>
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">LP</span>
+        <span class="brand-copy">
+          <strong>Lorena Pontón</strong>
+          <small>Full Stack Developer</small>
+        </span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú" id="menuToggle">
-        <span class="navbar-toggler-icon"></span>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">
+        <i class="bi bi-list"></i>
       </button>
 
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#home" data-nav data-i18n="nav_home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about" data-nav data-i18n="nav_about">Sobre Mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects" data-nav data-i18n="nav_projects">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume" data-nav data-i18n="nav_experience">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact" data-nav data-i18n="nav_contact">Contacto</a></li>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#sobre-mi">Perfil</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#stack">Stack</a>
+        <a href="#formacion">Formación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm btn-outline-primary btn-nav" href="#contact">
-              <i class="bi bi-chat-dots me-1"></i> <span data-i18n="nav_cta">Hablemos</span>
-            </a>
-          </li>
-
-          <!-- Language Toggle -->
-          <li class="nav-item ms-lg-3">
-            <div class="lang-toggle" role="group" aria-label="Selector de idioma">
-              <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-              <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-            </div>
-          </li>
-        </ul>
+      <div class="nav-actions">
+        <button class="recruiter-toggle" id="recruiterToggle" type="button" aria-pressed="false">
+          <i class="bi bi-briefcase"></i>
+          <span>Modo reclutador</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
+  <main id="main">
+    <section class="hero section" id="inicio">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> Bogotá, Colombia · Disponible para oportunidades</div>
+          <p class="hero-kicker">Ingeniería de Sistemas · Desarrollo de Software</p>
+          <h1>Desarrolladora <span>Full Stack</span> enfocada en productos que sí resuelven problemas.</h1>
+          <p class="hero-lead">Construyo aplicaciones web, APIs y soluciones con datos e inteligencia artificial. Mi base técnica combina <strong>Java & Spring Boot</strong>, <strong>React/Next.js</strong>, <strong>SQL</strong> y arquitecturas orientadas a producto.</p>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="section hero-section">
-      <div class="container py-5">
-        <div class="row align-items-center g-5">
-          
-          <!-- Left: Text Content -->
-          <div class="col-12 col-lg-6 hero-left">
-            <div class="badge-available mb-3" data-animate="fade-up">
-              <i class="bi bi-lightning-charge-fill me-2"></i>
-              <span data-i18n="hero_badge">Disponible para oportunidades</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos"><i class="bi bi-grid-1x2"></i> Ver proyectos</a>
+            <a class="btn btn-secondary" href="/hoja%20de%20vida/Hoja%20de%20vida%20Geidy%20ponton.%20(act)%20(1).pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-person"></i> Ver CV</a>
+          </div>
+
+          <div class="hero-links" aria-label="Perfiles profesionales">
+            <a href="https://github.com/Gei-del" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/geidyponton-desarrolladora-front-end" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="mailto:pontongeidy@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Resumen profesional">
+          <div class="profile-row">
+            <div class="profile-photo-wrap">
+              <img src="/IMG/WhatsApp%20Image%202025-12-13%20at%209.37.36%20PM.jpeg" alt="Lorena Pontón" class="profile-photo" />
             </div>
-
-            <h1 class="hero-title" data-animate="fade-up">
-              <span data-i18n="hero_greeting">Hola, soy</span> <span class="accent">Lorena Pontón</span>
-            </h1>
-
-            <h2 class="hero-subtitle" data-animate="fade-up">
-              <span data-i18n="hero_role">Desarrolladora</span> <span class="accent" data-i18n="hero_role_highlight">Full Stack Java</span> <span data-i18n="hero_role_suffix">en formación</span>
-            </h2>
-
-            <p class="hero-description mt-3" data-animate="fade-up" data-i18n="hero_desc">
-              Construyo soluciones reales desde proyectos académicos y hackathons. 
-              Combino backend en Java con frontend moderno y fundamentos de UX para crear 
-              aplicaciones completas con impacto real.
-            </p>
-
-            <div class="hero-actions d-flex flex-wrap gap-2 mt-4" data-animate="fade-up">
-              <a class="btn btn-primary" href="/hoja%20de%20vida/Hoja%20de%20vida%20Geidy%20ponton.%20(act)%20(1).pdf" download>
-                <i class="bi bi-download me-2"></i> <span data-i18n="hero_cv">Descargar CV</span>
-              </a>
-
-              <a class="btn btn-outline-light" href="#projects">
-                <i class="bi bi-grid-3x3-gap me-2"></i> <span data-i18n="hero_projects">Ver Proyectos</span>
-              </a>
-
-              <a class="btn btn-ghost" href="#contact">
-                <i class="bi bi-send me-2"></i> <span data-i18n="hero_contact">Contacto</span>
-              </a>
-            </div>
-
-            <div class="social-row mt-4" data-animate="fade-up">
-              <span class="muted small me-2" data-i18n="hero_find">Encuéntrame en:</span>
-              <a class="social-link" href="https://github.com/Gei-del?tab=repositories" target="_blank" rel="noreferrer" aria-label="GitHub">
-                <i class="bi bi-github"></i>
-              </a>
-              <a class="social-link" href="https://www.linkedin.com/in/geidyponton-desarrolladora-fron-end/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <a class="social-link" href="mailto:pontongeidy@gmail.com" aria-label="Email">
-                <i class="bi bi-envelope"></i>
-              </a>
-            </div>
-
-            <div class="watermark mt-4" aria-hidden="true">
-              <span class="watermark-text">© LP_DEV</span>
+            <div>
+              <p class="profile-label">Perfil profesional</p>
+              <h2>Lorena Pontón</h2>
+              <p>Full Stack · Backend Java · Data & AI</p>
             </div>
           </div>
 
-          <!-- Right: Photo & Skills -->
-          <div class="col-12 col-lg-6 hero-right">
-            <div class="hero-card" data-animate="zoom-in">
-              <div class="profile-ring">
-                <img class="profile-photo" src="/IMG/WhatsApp%20Image%202025-12-13%20at%209.37.36%20PM.jpeg" alt="Lorena Pontón - Desarrolladora Full Stack" />
-              </div>
-
-              <div class="hero-mini-cards mt-4">
-                <div class="mini-card" data-tilt>
-                  <i class="bi bi-code-slash"></i>
-                  <div>
-                    <p class="mini-title" data-i18n="hero_frontend">Frontend</p>
-                    <p class="mini-sub" data-i18n="hero_frontend_sub">HTML · CSS · JS</p>
-                  </div>
-                </div>
-
-                <div class="mini-card" data-tilt>
-                  <i class="bi bi-server"></i>
-                  <div>
-                    <p class="mini-title" data-i18n="hero_backend">Backend</p>
-                    <p class="mini-sub" data-i18n="hero_backend_sub">Java</p>
-                  </div>
-                </div>
-
-                <div class="mini-card" data-tilt>
-                  <i class="bi bi-database"></i>
-                  <div>
-                    <p class="mini-title" data-i18n="hero_data">Datos</p>
-                    <p class="mini-sub" data-i18n="hero_data_sub">MySQL</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="quick-facts">
+            <article>
+              <span>Rol actual</span>
+              <strong>Desarrolladora Full Stack</strong>
+              <small>Fresko · Jul 2026 — Actualidad</small>
+            </article>
+            <article>
+              <span>Base técnica</span>
+              <strong>Java · Spring Boot · React</strong>
+              <small>APIs REST · SQL · Next.js</small>
+            </article>
+            <article>
+              <span>Diferencial</span>
+              <strong>Producto + IA aplicada</strong>
+              <small>Hackathons, datos y soluciones offline</small>
+            </article>
           </div>
 
+          <div class="terminal-mini" aria-hidden="true">
+            <div class="terminal-top"><span></span><span></span><span></span><small>lorena.dev</small></div>
+            <code><b>$</b> whoami<br><span>systems_engineering + full_stack + ai</span><br><b>$</b> status<br><span>building_real_products_</span></code>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Áreas de especialidad">
+      <div class="shell signal-grid">
+        <span>Backend Java</span><span>Spring Boot</span><span>React / Next.js</span><span>APIs REST</span><span>PostgreSQL</span><span>IA aplicada</span>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="shell split-layout">
+        <div class="section-intro reveal">
+          <p class="section-tag">01 · Perfil</p>
+          <h2>Una perfil técnico que conecta ingeniería, producto y ejecución.</h2>
+        </div>
+        <div class="about-content reveal">
+          <p class="large-copy">Tecnóloga en Análisis y Desarrollo de Sistemas de Información y en formación profesional en Ingeniería de Sistemas. Ha construido soluciones de software con backend, frontend, bases de datos, IA y automatización, trabajando tanto en proyectos propios como en retos de innovación.</p>
+          <p>Su enfoque está en entender el problema antes de programar, construir soluciones mantenibles y explicar con claridad las decisiones técnicas. Ha trabajado con equipos ágiles, prototipos de hackathon, aplicaciones offline-first y productos web desplegados en producción.</p>
+
+          <div class="value-grid">
+            <article class="value-card"><i class="bi bi-diagram-3"></i><h3>Arquitectura</h3><p>Capas, APIs REST, persistencia, roles, seguridad y flujos de negocio.</p></article>
+            <article class="value-card"><i class="bi bi-database-check"></i><h3>Datos</h3><p>SQL, PostgreSQL/MySQL, ETL, análisis y modelos orientados a decisiones.</p></article>
+            <article class="value-card"><i class="bi bi-stars"></i><h3>IA aplicada</h3><p>Integración de modelos y asistentes cuando generan valor real al producto.</p></article>
+            <article class="value-card"><i class="bi bi-people"></i><h3>Colaboración</h3><p>Git/GitHub, metodologías ágiles, comunicación y entregas bajo presión.</p></article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section about-section">
-      <div class="container py-5">
-        <div class="section-head">
-          <p class="kicker" data-animate="fade-up" data-i18n="about_kicker">Sobre mí</p>
-          <h2 class="section-title" data-animate="fade-up" data-i18n="about_title">De la teoría a la práctica: proyectos que resuelven problemas reales</h2>
-          <p class="section-subtitle" data-animate="fade-up">
-            <strong class="accent" data-i18n="about_subtitle_highlight">Tecnóloga en Análisis y Desarrollo de Sistemas</strong>, 
-            estudiante de Ingeniería y formada en <strong class="accent">Full Stack Java</strong>.
-            <br><br>
-            <span data-i18n="about_subtitle_2">Mi experiencia viene de hackathons y proyectos académicos donde aplico lo aprendido en soluciones funcionales.</span>
-          </p>
+    <section class="section section-soft" id="experiencia">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="section-tag">02 · Experiencia</p><h2>Experiencia reciente y trabajo aplicado</h2></div>
+          <p>Un resumen directo para entender dónde ha aplicado sus habilidades.</p>
         </div>
 
-        <div class="row g-4 mt-3 align-items-stretch">
-          <div class="col-12 col-lg-7">
-            <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title" data-i18n="about_focus_title">Mi enfoque</h3>
-              <p class="muted" data-i18n="about_focus_p1">
-                Aprendo haciendo. Cada proyecto académico y hackathon ha sido una oportunidad para ir más allá de la teoría: 
-                en DenunciaIA desarrollé funcionalidades de IA para un problema social real; en Byte Cream construí un sistema 
-                completo con arquitectura MVC y conexión a base de datos.
-              </p>
-              <p class="muted" data-i18n="about_focus_p2">
-                Mi formación combina desarrollo multimedia (UX/UI + frontend) con backend en Java y bases de datos. 
-                Trabajo con metodologías ágiles, Git para control de versiones, y me adapto rápido a nuevas tecnologías. 
-                Busco un equipo donde pueda seguir aprendiendo mientras aporto desde el día uno.
-              </p>
-
-              <div class="skills-organized mt-4">
-                <div class="skill-group mb-3">
-                  <p class="small muted mb-2"><strong data-i18n="about_backend">Backend:</strong></p>
-                  <div class="skills">
-                    <span class="skill">Java</span>
-                    <span class="skill">POO</span>
-                    <span class="skill">APIs REST</span>
-                    <span class="skill">MySQL</span>
-                  </div>
-                </div>
-                <div class="skill-group mb-3">
-                  <p class="small muted mb-2"><strong data-i18n="about_frontend">Frontend:</strong></p>
-                  <div class="skills">
-                    <span class="skill">HTML5</span>
-                    <span class="skill">CSS3</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Bootstrap</span>
-                  </div>
-                </div>
-                <div class="skill-group">
-                  <p class="small muted mb-2"><strong data-i18n="about_tools">Herramientas:</strong></p>
-                  <div class="skills">
-                    <span class="skill">Git/GitHub</span>
-                    <span class="skill">Vercel</span>
-                    <span class="skill">UX/UI básico</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-5">
-            <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title" data-i18n="about_contribute_title">Lo que aporto</h3>
-
-              <ul class="clean-list mt-3">
-                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_1">Proyectos funcionales end-to-end (no solo teoría)</span></li>
-                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_2">Experiencia real en hackathons con equipos bajo presión</span></li>
-                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_3">Aprendizaje rápido y adaptabilidad a nuevas tecnologías</span></li>
-                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_4">Pensamiento orientado a resolver problemas del usuario</span></li>
-                <li><i class="bi bi-check2-circle me-2"></i><span data-i18n="about_contribute_5">Comunicación clara y trabajo colaborativo</span></li>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>Jul 2026 — Actualidad</span><strong>Fresko</strong></div>
+            <div class="timeline-body">
+              <div class="timeline-title-row"><h3>Desarrolladora Full Stack</h3><span class="pill live">Actual</span></div>
+              <p>Desarrollo de una aplicación web/PWA orientada a operación en campo, con arquitectura offline-first y flujos por roles.</p>
+              <ul>
+                <li>Next.js, React y TypeScript para interfaz y lógica de aplicación.</li>
+                <li>IndexedDB/Dexie para continuidad operativa sin conexión y sincronización.</li>
+                <li>Supabase con autenticación, PostgreSQL, almacenamiento y políticas RLS.</li>
+                <li>Captura por voz y reglas configurables para apoyar procesos operativos.</li>
               </ul>
-
-              <div class="mt-4 d-flex flex-wrap gap-2">
-                <a class="btn btn-outline-primary" href="#projects">
-                  <i class="bi bi-folder2-open me-2"></i> <span data-i18n="about_see_projects">Ver Proyectos</span>
-                </a>
-                <a class="btn btn-outline-light" href="#contact">
-                  <i class="bi bi-envelope-paper me-2"></i> <span data-i18n="about_contact">Contacto</span>
-                </a>
-              </div>
             </div>
-          </div>
+          </article>
 
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2025 — 2026</span><strong>Proyectos & Hackathons</strong></div>
+            <div class="timeline-body">
+              <h3>Desarrollo de productos tecnológicos</h3>
+              <p>Construcción de proyectos end-to-end en Java, Python, JavaScript/TypeScript, bases de datos e inteligencia artificial, con énfasis en prototipos funcionales, demos y presentación de soluciones.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="section projects-section">
-      <div class="container py-5">
-        <div class="section-head">
-          <p class="kicker" data-animate="fade-up" data-i18n="projects_kicker">Portafolio</p>
-          <h2 class="section-title" data-animate="fade-up" data-i18n="projects_title">Proyectos Destacados</h2>
-          <p class="section-subtitle" data-animate="fade-up" data-i18n="projects_subtitle">
-            Proyectos reales de hackathons y formación académica. Cada uno representa un problema resuelto, no solo código escrito.
-          </p>
+    <section class="section" id="proyectos">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="section-tag">03 · Proyectos</p><h2>Trabajo seleccionado</h2></div>
+          <p>No es una lista de repositorios: son proyectos elegidos por lo que demuestran técnicamente.</p>
         </div>
 
-        <!-- Filters -->
-        <div class="filters mt-4" data-animate="fade-up">
-          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
-          <button class="filter-btn" data-filter="hackathon" data-i18n="filter_hackathons">Hackathons</button>
-          <button class="filter-btn" data-filter="fullstack" data-i18n="filter_fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="web" data-i18n="filter_frontend">Frontend</button>
-          <button class="filter-btn" data-filter="java" data-i18n="filter_backend">Backend</button>
-          <button class="filter-btn" data-filter="personal" data-i18n="filter_personal">En Desarrollo</button>
+        <div class="project-toolbar reveal" role="group" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+          <button class="filter-btn" type="button" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" type="button" data-filter="backend">Backend</button>
+          <button class="filter-btn" type="button" data-filter="ai">IA & Datos</button>
+          <button class="filter-btn" type="button" data-filter="hackathon">Hackathons</button>
         </div>
 
-        <div class="row g-4 mt-1" id="projectsGrid">
+        <div class="projects-grid">
+          <article class="project-card featured reveal" data-category="ai fullstack">
+            <div class="project-top"><span class="project-index">01</span><span class="pill">Case Study</span></div>
+            <div class="project-icon"><i class="bi bi-globe-americas"></i></div>
+            <p class="project-type">AI · Data · Full Stack</p>
+            <h3>Kwesx IA</h3>
+            <p>Plataforma de inteligencia territorial que integra datos abiertos, ETL, APIs, PostgreSQL, Python/FastAPI y modelos de machine learning para apoyar decisiones en comunidades rurales.</p>
+            <div class="tech-list"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>ETL</span><span>ML</span></div>
+            <div class="project-links"><a href="https://github.com/Gei-del/Kwesx-AI--" target="_blank" rel="noopener noreferrer">Repositorio <i class="bi bi-arrow-up-right"></i></a></div>
+          </article>
 
-          <!-- Tejiendo Futuro - HACKATHON 3ER LUGAR -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
-            <article class="project-card featured-project">
-              <div class="project-thumb">
-                <img src="/IMG/tejiendo-futuro-preview.jpg" alt="Tejiendo Futuro - Incubadora Digital" loading="lazy">
-                <span class="project-chip chip-featured">3er Lugar</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Tejiendo Futuro</h3>
-                <p class="muted small mb-2">Hackathon | Emprendimiento Rural + Impacto Social</p>
-                <p class="project-desc">
-                  Incubadora digital para emprendimientos rurales que acompana a mujeres en cada etapa de su negocio. 
-                  Plataforma que conecta emprendedoras con recursos, mentoria y comunidad.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Mi contribucion:</strong></p>
-                  <ul class="small muted">
-                    <li>Desarrollo de la plataforma web</li>
-                    <li>Diseno de experiencia de usuario</li>
-                    <li>Integracion de funcionalidades clave</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>Web</span><span>UX/UI</span><span>Social</span>
-                  <span class="highlight">3er Lugar</span>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-outline-primary me-2" href="https://devpost.com/software/tejiendo-futuro" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Devpost
-                  </a>
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="Tejiendo Futuro - Hackathon 3er Lugar"
-                    data-desc="Incubadora digital para emprendimientos rurales que acompana a las mujeres en cada etapa de su negocio. La plataforma conecta emprendedoras rurales con recursos, mentoria y una comunidad de apoyo. Desarrollada en hackathon donde obtuvimos el 3er lugar. Mi rol incluyo el desarrollo de la plataforma web, diseno de experiencia de usuario y la integracion de funcionalidades clave para el acompanamiento de emprendedoras."
-                    data-tech="HTML5, CSS3, JavaScript, UX/UI, Diseno Web"
-                    data-github="https://github.com/Gei-del/tejiendo-futuro-conecta">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="project-card reveal" data-category="fullstack ai hackathon">
+            <div class="project-top"><span class="project-index">02</span><span class="pill accent-pill">3.er lugar · 300+</span></div>
+            <div class="project-icon"><i class="bi bi-clipboard2-data"></i></div>
+            <p class="project-type">Operations · AI · Offline</p>
+            <h3>Auditor IA</h3>
+            <p>Solución para auditoría e inventario operacional con trazabilidad, reglas de negocio y trabajo offline. Evolución técnica posterior al reto de innovación de Colsubsidio.</p>
+            <div class="tech-list"><span>React</span><span>Supabase</span><span>IndexedDB</span><span>IA</span></div>
+            <div class="project-links"><a href="https://github.com/Gei-del/AUDITOR-IA" target="_blank" rel="noopener noreferrer">Repositorio <i class="bi bi-arrow-up-right"></i></a></div>
+          </article>
 
-          <!-- DenunciaIA - PROYECTO DESTACADO HACKATHON -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
-            <article class="project-card featured-project">
-              <div class="project-thumb">
-                <img src="/IMG/denunciaia-preview.jpg" alt="DenunciaIA - Plataforma de denuncias con IA" loading="lazy">
-                <span class="project-chip chip-featured">★ Hackathon IA</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">DenunciaIA</h3>
-                <p class="muted small mb-2">Hackathon | Impacto Social + Inteligencia Artificial</p>
-                <p class="project-desc">
-                  Plataforma que facilita la denuncia ciudadana utilizando IA para clasificar y priorizar casos. 
-                  Desarrollada en hackathon con enfoque en resolver un problema social real.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Mi contribución:</strong></p>
-                  <ul class="small muted">
-                    <li>Desarrollo de funcionalidades de integración con IA</li>
-                    <li>Implementación de interfaz de usuario</li>
-                    <li>Colaboración en equipo multidisciplinario</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>IA</span><span>JavaScript</span><span>API</span>
-                  <span class="highlight">Impacto Social</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="DenunciaIA - Hackathon de Impacto Social"
-                    data-desc="Plataforma desarrollada en hackathon que utiliza inteligencia artificial para facilitar y optimizar el proceso de denuncias ciudadanas. El sistema clasifica automáticamente los casos según su urgencia y tipo, permitiendo una respuesta más eficiente. Mi rol incluyó el desarrollo de las funcionalidades de integración con el modelo de IA, la implementación de la interfaz de usuario y la colaboración activa con el equipo para cumplir los objetivos en tiempo limitado."
-                    data-tech="JavaScript, APIs de IA, HTML5, CSS3, Trabajo en equipo"
-                    data-github="https://github.com/Gei-del">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="project-card reveal" data-category="fullstack hackathon ai">
+            <div class="project-top"><span class="project-index">03</span><span class="pill">Realtime</span></div>
+            <div class="project-icon"><i class="bi bi-lightning-charge"></i></div>
+            <p class="project-type">Realtime · Multiplayer · AI</p>
+            <h3>KAIROS Live</h3>
+            <p>Experiencia multijugador en tiempo real con salas, rondas, respuestas, ranking, reconexión e integración de IA para enriquecer la dinámica del juego.</p>
+            <div class="tech-list"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>AI</span></div>
+            <div class="project-links"><a href="https://github.com/Gei-del/KAIROS" target="_blank" rel="noopener noreferrer">Repositorio <i class="bi bi-arrow-up-right"></i></a></div>
+          </article>
 
-          <!-- Byte Cream - PROYECTO ESTRELLA -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack web java">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="/IMG/byte%20cream.PNG" alt="Byte Cream - Sistema de Gestión" loading="lazy">
-                <span class="project-chip chip-featured">★ Full Stack</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Byte Cream</h3>
-                <p class="muted small mb-2">Sistema de Gestión para Heladería · Arquitectura MVC</p>
-                <p class="project-desc">
-                  Aplicación web full stack con integración frontend-backend. Implementé gestión de productos, 
-                  clientes y ventas con operaciones CRUD, conexión a MySQL y arquitectura en capas.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Funcionalidades clave:</strong></p>
-                  <ul class="small muted">
-                    <li>API REST para operaciones de datos</li>
-                    <li>Validaciones en frontend y backend</li>
-                    <li>Interfaz responsiva con Bootstrap</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>Java</span><span>Servlets/JSP</span><span>MySQL</span>
-                  <span>HTML/CSS</span><span>JavaScript</span>
-                  <span class="highlight">CRUD</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="Byte Cream - Sistema de Gestión"
-                    data-desc="Aplicación web full stack con arquitectura MVC que integra frontend responsivo (HTML, CSS, Bootstrap) con backend en Java. Implementa gestión completa de productos, clientes y ventas mediante operaciones CRUD conectadas a base de datos MySQL. Incluye validaciones robustas en ambas capas, arquitectura en capas para separación de responsabilidades, y API REST para comunicación cliente-servidor."
-                    data-tech="Java, Servlets/JSP, MySQL, HTML5, CSS3, JavaScript, Bootstrap"
-                    data-github="https://github.com/Gei-del/Proyecto-LiqueDevs">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="project-card reveal" data-category="backend fullstack">
+            <div class="project-top"><span class="project-index">04</span><span class="pill">Java</span></div>
+            <div class="project-icon"><i class="bi bi-cup-hot"></i></div>
+            <p class="project-type">Backend · E-commerce</p>
+            <h3>Byte & Cream</h3>
+            <p>E-commerce desarrollado con lógica de negocio en Java y Spring Boot, persistencia en MySQL, APIs REST y arquitectura en capas aplicando principios SOLID.</p>
+            <div class="tech-list"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>REST</span></div>
+            <div class="project-links"><a href="https://github.com/Gei-del/Proyecto-LiqueDevs" target="_blank" rel="noopener noreferrer">Repositorio <i class="bi bi-arrow-up-right"></i></a></div>
+          </article>
 
-          <!-- Hackathon Vortex -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="fullstack hackathon">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="/IMG/vortex.PNG" alt="Hackathon Vortex Tech" loading="lazy">
-                <span class="project-chip">Hackathon</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Vortex Tech</h3>
-                <p class="muted small mb-2">Solución Tecnológica en 48 horas · Trabajo en Equipo</p>
-                <p class="project-desc">
-                  Desarrollé solución tecnológica con enfoque en IA para alertas proactivas (churn) y 
-                  ciberseguridad empresarial. Trabajo colaborativo bajo tiempo limitado.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Responsabilidades:</strong></p>
-                  <ul class="small muted">
-                    <li>Desarrollo del módulo de integración backend</li>
-                    <li>Implementación de funcionalidades clave</li>
-                    <li>Presentación técnica ante jurado</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>IA/ML</span><span>Seguridad</span>
-                  <span class="highlight">Hackathon</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="Vortex Tech - Hackathon"
-                    data-desc="Solución tecnológica desarrollada en equipo durante hackathon de 48 horas. Implementación de sistema con enfoque en inteligencia artificial para alertas proactivas de abandono de clientes (churn prediction) y módulo de ciberseguridad empresarial. Desarrollo del módulo de integración backend, colaboración efectiva con equipo multidisciplinario y presentación técnica ante jurado especializado."
-                    data-tech="Java, JavaScript, MySQL, API REST"
-                    data-github="https://github.com/Gei-del">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="project-card reveal" data-category="fullstack ai hackathon">
+            <div class="project-top"><span class="project-index">05</span><span class="pill">MVP</span></div>
+            <div class="project-icon"><i class="bi bi-compass"></i></div>
+            <p class="project-type">Product · Career Tech</p>
+            <h3>HerNext</h3>
+            <p>MVP para mujeres que regresan al mercado laboral, cambian de carrera o buscan su primera oportunidad formal. Convierte contexto personal en una ruta de acción clara.</p>
+            <div class="tech-list"><span>TypeScript</span><span>Product UX</span><span>Web</span></div>
+            <div class="project-links"><a href="https://hernext-ewgh-2026.netlify.app" target="_blank" rel="noopener noreferrer">Demo <i class="bi bi-arrow-up-right"></i></a><a href="https://github.com/Gei-del/hernext-ewgh-2026" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-github"></i></a></div>
+          </article>
 
-          <!-- Agenda Telefónica Java -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="java">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="/IMG/Gemini_Generated_Image_cnsmcicnsmcicnsm.png" alt="Sistema de Agenda Telefónica" loading="lazy">
-                <span class="project-chip">Backend</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Sistema de Agenda Telefónica</h3>
-                <p class="muted small mb-2">Aplicación de Escritorio · Java POO</p>
-                <p class="project-desc">
-                  Sistema de gestión de contactos con validaciones robustas, arquitectura orientada a objetos 
-                  y operaciones CRUD completas. Interfaz gráfica con JavaFX.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Características técnicas:</strong></p>
-                  <ul class="small muted">
-                    <li>Arquitectura orientada a objetos</li>
-                    <li>Validación de datos en múltiples capas</li>
-                    <li>Prevención de duplicados</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>Java</span><span>JavaFX</span><span>POO</span>
-                  <span class="highlight">CRUD</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="Sistema de Agenda Telefónica"
-                    data-desc="Aplicación de escritorio desarrollada en Java con arquitectura orientada a objetos. Implementa gestión completa de contactos telefónicos con operaciones CRUD, validaciones robustas de datos (formato de teléfono, campos obligatorios), prevención de duplicados y manejo de excepciones. Interfaz gráfica construida con JavaFX para interacción fluida con el usuario."
-                    data-tech="Java, JavaFX, POO, Manejo de Excepciones"
-                    data-github="https://github.com/Gei-del/Hackathon-2">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="project-card reveal" data-category="fullstack ai">
+            <div class="project-top"><span class="project-index">06</span><span class="pill">Product</span></div>
+            <div class="project-icon"><i class="bi bi-recycle"></i></div>
+            <p class="project-type">Sustainability · Product</p>
+            <h3>Kiri IA</h3>
+            <p>Aplicación para gestión de residuos con inventario, seguimiento, analítica y asistencia inteligente, construida como producto web moderno y desplegable.</p>
+            <div class="tech-list"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Maps</span></div>
+            <div class="project-links"><a href="https://kiri-ia.vercel.app/" target="_blank" rel="noopener noreferrer">Demo <i class="bi bi-arrow-up-right"></i></a><a href="https://github.com/Gei-del/Kiri-IA" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-github"></i></a></div>
+          </article>
+        </div>
 
-          <!-- Tejiendo Rutas - PROYECTO PERSONAL EN DESARROLLO -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web personal">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="/IMG/tejiendo-rutas-preview.jpg" alt="Tejiendo Rutas - Juego de Puzzles" loading="lazy">
-                <span class="project-chip chip-dev">En Desarrollo</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Tejiendo Rutas</h3>
-                <p class="muted small mb-2">Proyecto Personal | Juego de Puzzles + Plataformas</p>
-                <p class="project-desc">
-                  Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan 
-                  energia, datos y colaboracion. Inspirado en como la tecnologia construye redes urbanas.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Mecanicas:</strong></p>
-                  <ul class="small muted">
-                    <li>Conectar nodos usando hilos</li>
-                    <li>Optimizar recursos (economia)</li>
-                    <li>Restaurar color y vida a la ciudad</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>Game Dev</span><span>JavaScript</span><span>Canvas</span>
-                  <span class="highlight">En Curso</span>
-                </div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-outline-primary me-2" href="https://github.com/Gei-del/Tejiendo-rutas" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-github me-1"></i> GitHub
-                  </a>
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="Tejiendo Rutas - Juego en Desarrollo"
-                    data-desc="Juego de puzzles y plataformas donde conectas una ciudad mediante hilos que representan energia, datos y colaboracion. Las mecanicas incluyen conectar nodos usando hilos, optimizar recursos en un sistema de economia, y restaurar color y vida a la ciudad. Inspirado en como la tecnologia y la economia construyen redes urbanas. Proyecto personal actualmente en desarrollo."
-                    data-tech="JavaScript, HTML5 Canvas, Game Design, Logica de Puzzles"
-                    data-github="https://github.com/Gei-del/Tejiendo-rutas">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Tienda Deportiva -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="web">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="/IMG/tieenda%20deportantivo.PNG" alt="E-Commerce Deportivo" loading="lazy">
-                <span class="project-chip">Frontend</span>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">E-Commerce Deportivo</h3>
-                <p class="muted small mb-2">Tienda Online · Hackathon Generation</p>
-                <p class="project-desc">
-                  Desarrollo frontend de e-commerce durante hackathon en equipo. Implementación de catálogo 
-                  de productos, carrito de compras y validaciones de formularios.
-                </p>
-                <div class="project-features mt-2">
-                  <p class="small muted mb-1"><strong>Implementación:</strong></p>
-                  <ul class="small muted">
-                    <li>Interfaz responsiva con Bootstrap</li>
-                    <li>Lógica de carrito en JavaScript</li>
-                    <li>Validaciones de formularios</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
-                  <span>Bootstrap</span><span class="highlight">Equipo</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-sm btn-primary" data-open-modal
-                    data-title="E-Commerce Deportivo"
-                    data-desc="Aplicación web de comercio electrónico desarrollada en equipo durante hackathon académico. Implementación del frontend completo con catálogo dinámico de productos deportivos, sistema de carrito de compras con LocalStorage, formularios con validaciones robustas, interfaz totalmente responsiva con Bootstrap y lógica de negocio en JavaScript vanilla."
-                    data-tech="HTML5, CSS3, JavaScript, Bootstrap, LocalStorage"
-                    data-github="https://github.com/Gei-del">
-                    <i class="bi bi-eye me-1"></i> Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
-
+        <div class="all-projects reveal">
+          <a class="btn btn-secondary" href="https://github.com/Gei-del?tab=repositories" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> Ver todos los repositorios</a>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="resume" class="section resume-section">
-      <div class="container py-5">
-        <div class="section-head">
-          <p class="kicker" data-animate="fade-up" data-i18n="exp_kicker">Trayectoria</p>
-          <h2 class="section-title" data-animate="fade-up" data-i18n="exp_title">Formación sólida + experiencia práctica en proyectos reales</h2>
-          <p class="section-subtitle" data-animate="fade-up" data-i18n="exp_subtitle">
-            Sin experiencia laboral formal aún, pero con formación técnica completa y múltiples proyectos 
-            desarrollados en hackathons y entornos académicos colaborativos.
-          </p>
+    <section class="section section-soft" id="stack">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="section-tag">04 · Stack</p><h2>Tecnologías organizadas por capacidad</h2></div>
+          <p>Sin porcentajes arbitrarios: cada grupo representa herramientas usadas en formación y proyectos.</p>
         </div>
 
-        <div class="row g-4 mt-2">
-          
-          <!-- EXPERIENCIA PRÁCTICA -->
-          <div class="col-12 col-lg-6">
-            <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">
-                <i class="bi bi-briefcase me-2"></i>Experiencia Práctica
-              </h3>
-
-              <div class="timeline mt-3">
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Tejiendo Futuro - Hackathon <span class="badge bg-warning text-dark ms-2">3er Lugar</span></p>
-                    <p class="t-meta muted">Incubadora Digital · Emprendimiento Rural</p>
-                    <p class="t-desc muted">
-                      Plataforma para emprendedoras rurales. Desarrollo web, diseno UX/UI e integracion 
-                      de funcionalidades. Tercer lugar en competencia de hackathon.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">DenunciaIA - Hackathon</p>
-                    <p class="t-meta muted">Desarrollo con IA · Impacto Social</p>
-                    <p class="t-desc muted">
-                      Plataforma de denuncias ciudadanas con IA. Desarrolle funcionalidades de integracion 
-                      con el modelo de IA y colabore en equipo para resolver un problema social real.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Hackathon Vortex 2024</p>
-                    <p class="t-meta muted">Desarrolladora Full Stack</p>
-                    <p class="t-desc muted">
-                      Solución tecnológica con IA para alertas proactivas. Desarrollo backend e 
-                      implementación de funcionalidades clave bajo presión de tiempo.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">E-Commerce Deportivo - Hackathon</p>
-                    <p class="t-meta muted">Desarrolladora Frontend</p>
-                    <p class="t-desc muted">
-                      Interfaces responsivas y lógica de carrito de compras en JavaScript. 
-                      Trabajo colaborativo en equipo con metodología ágil.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Proyectos Académicos Full Stack</p>
-                    <p class="t-meta muted">2024 - 2025</p>
-                    <p class="t-desc muted">
-                      Byte Cream: Sistema de gestión con arquitectura MVC. Agenda Telefónica: Aplicación de 
-                      escritorio con Java. Múltiples proyectos CRUD con conexión a bases de datos.
-                    </p>
-                  </div>
-                  
-                  <div class="mt-4">
-                    <a class="btn btn-outline-primary"
-                    href="/hoja%20de%20vida/Hoja%20de%20vida%20Geidy%20ponton.%20(act)%20(1).pdf" download>
-                    <i class="bi bi-file-earmark-arrow-down me-2"></i> Descargar CV</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- EDUCACIÓN -->
-          <div class="col-12 col-lg-6">
-            <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title">
-                <i class="bi bi-mortarboard me-2"></i>Educación
-              </h3>
-
-              <div class="timeline mt-3">
-                
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Desarrolladora Full Stack Java</p>
-                    <p class="t-meta muted">Generation Colombia · Finalizado</p>
-                    <p class="t-desc muted">
-                      Desarrollo web full stack, Java, POO, bases de datos y proyectos prácticos con enfoque 
-                      en lógica de negocio y trabajo colaborativo en equipos ágiles.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Análisis y Desarrollo de Sistemas</p>
-                    <p class="t-meta muted">SENA · Finalizado</p>
-                    <p class="t-desc muted">
-                      Análisis de requerimientos, diseño de soluciones tecnológicas, buenas prácticas de 
-                      desarrollo y documentación técnica.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="dot"></div>
-                  <div class="content">
-                    <p class="t-title">Ingeniería de Sistemas</p>
-                    <p class="t-meta muted">CUN · En curso</p>
-                    <p class="t-desc muted">
-                      Formación en desarrollo de software, bases de datos, seguridad informática y gestión 
-                      de proyectos tecnológicos.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
+        <div class="stack-grid">
+          <article class="stack-card reveal"><div class="stack-head"><i class="bi bi-server"></i><h3>Backend</h3></div><div class="stack-tags"><span>Java</span><span>Spring Boot</span><span>Python</span><span>FastAPI</span><span>APIs REST</span></div></article>
+          <article class="stack-card reveal"><div class="stack-head"><i class="bi bi-window"></i><h3>Frontend</h3></div><div class="stack-tags"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>HTML5</span><span>CSS3</span></div></article>
+          <article class="stack-card reveal"><div class="stack-head"><i class="bi bi-database"></i><h3>Datos</h3></div><div class="stack-tags"><span>PostgreSQL</span><span>MySQL</span><span>SQL</span><span>ETL</span><span>Supabase</span><span>IndexedDB</span></div></article>
+          <article class="stack-card reveal"><div class="stack-head"><i class="bi bi-tools"></i><h3>Herramientas</h3></div><div class="stack-tags"><span>Git</span><span>GitHub</span><span>Postman</span><span>Docker</span><span>Vercel</span><span>Agile</span></div></article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section contact-section">
-      <div class="container py-5">
-
-        <div class="section-head">
-          <p class="kicker" data-animate="fade-up" data-i18n="contact_kicker">Contacto</p>
-          <h2 class="section-title" data-animate="fade-up" data-i18n="contact_title">Busco mi primera oportunidad como desarrolladora</h2>
+    <section class="section" id="formacion">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="section-tag">05 · Formación</p><h2>Base académica y formación complementaria</h2></div>
+          <p>Una trayectoria que conecta fundamentos, desarrollo profesional y aprendizaje continuo.</p>
         </div>
 
-        <!-- Recruiter-friendly availability cards -->
-        <div class="recruiter-info row g-3 mt-2 mb-4" data-animate="fade-up">
-          <div class="col-12 col-md-4">
-            <div class="info-chip">
-              <i class="bi bi-briefcase"></i>
-              <div>
-                <p class="chip-label" data-i18n="contact_looking">Busco</p>
-                <p class="chip-value" data-i18n="contact_looking_value">Practicas / Primer empleo</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="info-chip">
-              <i class="bi bi-geo-alt"></i>
-              <div>
-                <p class="chip-label" data-i18n="contact_modality">Modalidad</p>
-                <p class="chip-value" data-i18n="contact_modality_value">Remoto / Hibrido / Presencial</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="info-chip info-chip-highlight">
-              <i class="bi bi-lightning-charge-fill"></i>
-              <div>
-                <p class="chip-label" data-i18n="contact_status">Estado</p>
-                <p class="chip-value" data-i18n="contact_status_value">Disponibilidad inmediata</p>
-              </div>
-            </div>
-          </div>
+        <div class="education-grid">
+          <article class="education-card reveal"><span>En curso</span><h3>Ingeniería de Sistemas</h3><p>Corporación Unificada Nacional — CUN</p><small>Formación profesional</small></article>
+          <article class="education-card reveal"><span>Finalizado</span><h3>Tecnología en Análisis y Desarrollo de Sistemas de Información</h3><p>SENA</p><small>Desarrollo de software y sistemas de información</small></article>
+          <article class="education-card reveal"><span>Finalizado</span><h3>Full Stack Java</h3><p>Generation Colombia</p><small>Java, desarrollo web, trabajo en equipo y empleabilidad</small></article>
         </div>
 
-        <div class="row g-4 mt-2 align-items-stretch">
-
-          <!-- Left: Contact Info -->
-          <div class="col-12 col-lg-5">
-            <div class="card-surface p-4 h-100" data-animate="fade-up">
-              <h3 class="card-title" data-i18n="contact_info_title">Información de Contacto</h3>
-
-              <div class="contact-list mt-3">
-                <a class="contact-item" href="mailto:pontongeidy@gmail.com">
-                  <i class="bi bi-envelope"></i>
-                  <div>
-                    <p class="c-title">Email</p>
-                    <p class="c-sub muted">pontongeidy@gmail.com</p>
-                  </div>
-                </a>
-
-                <a class="contact-item" href="https://github.com/Gei-del" target="_blank" rel="noreferrer">
-                  <i class="bi bi-github"></i>
-                  <div>
-                    <p class="c-title">GitHub</p>
-                    <p class="c-sub muted">github.com/Gei-del</p>
-                  </div>
-                </a>
-
-                <a class="contact-item" href="https://www.linkedin.com/in/geidyponton-desarrolladora-fron-end/" target="_blank" rel="noreferrer">
-                  <i class="bi bi-linkedin"></i>
-                  <div>
-                    <p class="c-title">LinkedIn</p>
-                    <p class="c-sub muted">Lorena Pontón</p>
-                  </div>
-                </a>
-
-                <a class="contact-item" href="https://wa.me/573174070511" target="_blank" rel="noreferrer">
-                  <i class="bi bi-whatsapp"></i>
-                  <div>
-                    <p class="c-title">WhatsApp</p>
-                    <p class="c-sub muted">+57 317 407 0511</p>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Right: Video Presentation -->
-          <div class="col-12 col-lg-7">
-            <div class="card-surface p-4 h-100 video-side" data-animate="fade-up">
-              <h3 class="card-title mb-3">Presentación en Video</h3>
-
-              <div class="video-wrapper">
-                <video controls preload="metadata" playsinline>
-                  <source src="/IMG/contacto%20video%20-%20perfil%20profesional.mp4" type="video/mp4">
-                  Tu navegador no soporta la reproducción de video HTML5.
-                </video>
-              </div>
-            </div>
-          </div>
-
+        <div class="achievement-row reveal">
+          <div class="achievement-icon"><i class="bi bi-trophy"></i></div>
+          <div><strong>3.er lugar — Hackathon Colsubsidio</strong><p>Reconocimiento por innovación y propuesta de valor entre más de 300 participantes.</p></div>
         </div>
       </div>
     </section>
 
+    <section class="section contact-section" id="contacto">
+      <div class="shell contact-card reveal">
+        <div>
+          <p class="section-tag">06 · Contacto</p>
+          <h2>¿Buscas una desarrolladora que pueda aprender rápido, construir y explicar lo que hace?</h2>
+          <p>Estoy abierta a oportunidades junior, proyectos y equipos donde pueda aportar en desarrollo Full Stack, backend Java, datos o soluciones con IA.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:pontongeidy@gmail.com"><i class="bi bi-envelope"></i> Escribirme</a>
+          <button class="btn btn-secondary" id="copyEmail" type="button" data-email="pontongeidy@gmail.com"><i class="bi bi-copy"></i> Copiar email</button>
+          <a class="text-link" href="https://www.linkedin.com/in/geidyponton-desarrolladora-front-end" target="_blank" rel="noopener noreferrer">LinkedIn <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-      <p class="m-0 muted small">
-        © <span id="year"></span> Lorena Pontón · <span data-i18n="footer_made">Diseñado y desarrollado por</span> LP_DEV
-      </p>
-
-      <div class="footer-links d-flex gap-3">
-        <a href="#home" class="muted small" data-i18n="nav_home">Inicio</a>
-        <a href="#projects" class="muted small" data-i18n="nav_projects">Proyectos</a>
-        <a href="#contact" class="muted small" data-i18n="nav_contact">Contacto</a>
-      </div>
+    <div class="shell footer-grid">
+      <div><strong>Lorena Pontón</strong><p>Ingeniería de Sistemas · Desarrolladora Full Stack</p></div>
+      <p>Diseñado y construido como parte de mi evolución profesional · <span id="year"></span></p>
+      <a href="#top" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></a>
     </div>
   </footer>
 
-  <!-- PROJECT MODAL -->
-  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content modal-dark">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="modalTitle">Proyecto</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-
-        <div class="modal-body">
-          <p class="muted" id="modalDesc"></p>
-
-          <div class="mt-3">
-            <p class="small mb-2"><strong>Stack Tecnológico:</strong></p>
-            <p class="muted small" id="modalTech"></p>
-          </div>
-
-          <div class="d-flex flex-wrap gap-2 mt-4">
-            <a class="btn btn-outline-light" id="modalGithub" href="#" target="_blank" rel="noreferrer">
-              <i class="bi bi-github me-2"></i> Ver en GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="/JS/translations.js"></script>
-  <script src="/JS/portafolio.js"></script>
-
+  <div class="toast" id="toast" role="status" aria-live="polite">Email copiado</div>
+  <script src="/JS/portafolio.js" defer></script>
 </body>
 </html>
