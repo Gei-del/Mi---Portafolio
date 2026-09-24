@@ -11,7 +11,7 @@ Presentar de forma clara y profesional:
 - Proyectos seleccionados por evidencia técnica, no por cantidad.
 - Stack organizado por capacidades: backend, frontend, datos y herramientas.
 - Formación, hackathons y logros relevantes.
-- Acceso directo a GitHub, LinkedIn, CV y contacto.
+- Acceso directo a GitHub, LinkedIn y contacto profesional.
 
 ## Experiencia de usuario
 
